@@ -14,7 +14,7 @@ export interface ILecturers {
   id: string;
   name: string;
   bio: string;
-  themes: string;
+  themes: IThemes[];
   organization: string;
 }
 

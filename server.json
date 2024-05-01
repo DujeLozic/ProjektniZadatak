@@ -2,13 +2,13 @@
   "workshops": [
     {
       "id": "radionica_1",
-      "name": "Bruncek111111",
+      "name": "Bruncek",
       "date": "1.1.2025",
       "lecturer": "Ana Anić",
       "description": "radi za mid placu",
       "theme": "Next.js",
       "difficulty": "Junior",
-      "number_of_aplications": 10,
+      "number_of_aplications": 12,
       "img": ""
     },
     {
@@ -178,6 +178,24 @@
       "description": "asdasd",
       "theme": "React",
       "difficulty": "Junior"
+    },
+    {
+      "id": "8908",
+      "name": "Zuhrica",
+      "date": "1.1.1999",
+      "lecturer": "Ivana Ivančić",
+      "description": "asdasdasdasdasds",
+      "theme": "React",
+      "difficulty": "Senior"
+    },
+    {
+      "id": "1212",
+      "name": "smeče2111",
+      "date": "1.1.2000",
+      "lecturer": "Ivana Ivančić",
+      "description": "111111111",
+      "theme": "Express",
+      "difficulty": "Senior"
     }
   ],
   "lecturers": [
@@ -185,35 +203,53 @@
       "id": "predavac_1",
       "name": "Ana Anić",
       "bio": "Biografija predavaca 1",
-      "themes": "React",
-      "organization": "Digital Dalmacija"
+      "organization": "Digital Dalmacija",
+      "themes": [
+        {
+          "id": "react",
+          "name": "React"
+        },
+        {
+          "id": "express",
+          "name": "Express"
+        }
+      ]
     },
     {
       "id": "predavac_2",
       "name": "Petra Petrić",
       "bio": "Biografija predavaca 2",
       "organization": "Info Bip",
-      "themes": "Express"
+      "themes": [
+        {
+          "id": "express",
+          "name": "Express"
+        }
+      ]
     },
     {
       "id": "predavac_3",
       "name": "Ivana Ivančić",
       "bio": "Biografija predavaca 3",
-      "themes": "Next.js",
+      "themes": [
+        {
+          "id": "node_js",
+          "name": "Node.js"
+        }
+      ],
       "organization": "Info Bip"
     },
     {
       "id": "predavac_4",
       "name": "Ante Antić",
       "bio": "Biografija predavaca 4",
-      "themes": "Node.js",
+      "themes": [
+        {
+          "id": "next_js",
+          "name": "Next.js"
+        }
+      ],
       "organization": "Locastic"
-    },
-    {
-      "id": "fdfa",
-      "name": "asdasdada",
-      "bio": "asdasdasad",
-      "organization": "Agilno"
     }
   ],
   "organization": [
@@ -346,6 +382,24 @@
       "name": "asdasd",
       "email": "dujelozic@gmail.comasdasd",
       "reason": "asdasdaadaasda"
+    },
+    {
+      "id": 0,
+      "name": "adasd",
+      "email": "dujelozic@gmail.com",
+      "reason": "asdasdasd"
+    },
+    {
+      "id": 0,
+      "name": "asdsda",
+      "email": "codmaniacdudu@gmail.com",
+      "reason": "asdasdadad"
+    },
+    {
+      "id": 0,
+      "name": "asdasd",
+      "email": "codmaniacdudu@gmail.com",
+      "reason": "asdasd"
     }
   ]
 }

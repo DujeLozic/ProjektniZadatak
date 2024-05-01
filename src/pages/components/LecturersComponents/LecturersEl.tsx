@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ILecturers } from "../../../interface";
 import "./LecturersEl.css";
 import ModalEditLecturer from "./ModalEditLecturer";
+import { redirect } from "react-router-dom";
 
 function LecturersEl({ lecturer }: { lecturer: ILecturers }) {
   const [modalEditOpener, setModalEditOpener] = useState(false);
@@ -27,9 +28,16 @@ function LecturersEl({ lecturer }: { lecturer: ILecturers }) {
         <p className="lecturerOrganization">
           Organizacija: {lecturer.organization}
         </p>
-        <p className="lecturerThemes">Teme: {lecturer.themes}</p>
+        <p className="lecturerThemes">
+          Teme: {lecturer.themes.map((theme) => theme.name).join(", ")}
+        </p>
         <div className="buttonsContanier">
-          <button className="viewWorkshopsButton">Pregledaj radionice</button>
+          <button
+            className="viewWorkshopsButton"
+            onClick={() => redirect(`/predavaci/${lecturer.id}`)}
+          >
+            Pregledaj radionice
+          </button>
           <button
             className="editLecturerButton"
             onClick={handleModalEditOpener}

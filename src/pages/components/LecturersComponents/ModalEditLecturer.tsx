@@ -1,4 +1,4 @@
-import Select from "react-select";
+import Select, { OptionsOrGroups } from "react-select";
 import "./ModalEditLecturer.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -9,7 +9,12 @@ interface InputForm {
   name: string;
   bio: string;
   organization: string;
-  themes: string;
+  themes: IThemes[];
+}
+
+interface Option {
+  value: string;
+  label: string;
 }
 
 function ModalEditLecturer({
@@ -26,12 +31,17 @@ function ModalEditLecturer({
     name: "",
     bio: "",
     organization: "",
-    themes: "",
+    themes: [],
   });
+  const mapValuesToOptions = (values: IThemes[]): OptionsOrGroups<Option> => {
+    return values.map((theme) => {
+      return { value: theme.id, label: theme.name };
+    });
+  };
 
   const [themes, setThemes] = useState<IThemes[]>([]);
   const [organizations, setOrganizations] = useState<IOrganizationts[]>([]);
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [selectedOptions, setSelectedOptions] = useState<readonly Option[]>([]);
 
   useEffect(() => {
     Promise.all([
@@ -49,14 +59,11 @@ function ModalEditLecturer({
           themes: resFormData.data.themes,
         }));
         setThemes(resThemes.data);
+        setSelectedOptions(mapValuesToOptions(resThemes.data));
         setOrganizations(resOrganizations.data);
       })
       .catch((err) => console.log(err.message));
   }, []);
-
-  const handleSelectedOptions = (selectedOptions: any) => {
-    setSelectedOptions(selectedOptions);
-  };
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -67,6 +74,21 @@ function ModalEditLecturer({
         setModalEditOpener(false);
       })
       .catch((err) => console.log(err.message));
+  };
+
+  const mapOptionsToValues = (options: readonly Option[]): IThemes[] => {
+    return options.map((option) => {
+      return { id: option.value, name: option.label };
+    });
+  };
+
+  const onChangeTheme = (option: readonly Option[]) => {
+    setSelectedOptions(option);
+    console.log(option);
+    setFormData({
+      ...formData,
+      themes: mapOptionsToValues(option),
+    });
   };
 
   return (
@@ -130,11 +152,13 @@ function ModalEditLecturer({
           <div className="modalInputElements">
             <label htmlFor="ThemesLec">Teme: </label>
             <Select
+              className="multiSelect"
               id="ThemesLec"
-              options={themes}
+              options={mapValuesToOptions(themes)}
               value={selectedOptions}
-              onChange={handleSelectedOptions}
+              onChange={onChangeTheme}
               isMulti={true}
+              required
             />
           </div>
 

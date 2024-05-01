@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import Select from "react-select/base";
 import { ILecturers, IOrganizationts, IThemes } from "../../../interface";
 import axios from "axios";
+import { Options, OptionsOrGroups } from "react-select";
 
 interface InputForm {
   id: string;
   name: string;
   bio: string;
   organization: string;
-  themes: string;
+  themes: IThemes[];
 }
 
 function ModalNewLecturer({
@@ -25,7 +26,7 @@ function ModalNewLecturer({
     name: "",
     bio: "",
     organization: "",
-    themes: "",
+    themes: [],
   });
 
   const [themes, setThemes] = useState<IThemes[]>([]);
@@ -67,6 +68,12 @@ function ModalNewLecturer({
 
   const handleSelectedOptions = (selectedOptions: any) => {
     setSelectedOptions(selectedOptions);
+  };
+
+  const mapValuesToOptions = (): OptionsOrGroups<Option> => {
+    return themes.map((theme) => {
+      return { value: theme.id, label: theme.name };
+    });
   };
 
   return (
@@ -131,7 +138,7 @@ function ModalNewLecturer({
             <label htmlFor="ThemesLec">Teme: </label>
             <Select
               id="ThemesLec"
-              options={themes}
+              options={mapValuesToOptions()}
               value={selectedOptions}
               onChange={handleSelectedOptions}
               isMulti={true}

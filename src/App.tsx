@@ -1,4 +1,8 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  useParams,
+} from "react-router-dom";
 import "./App.css";
 import { Lecturers } from "./pages/Lecturers";
 import { Administration } from "./pages/Administration";
@@ -8,6 +12,8 @@ import Workshops from "./pages/Workshops";
 import { Home } from "./pages/Home";
 
 function App() {
+  let { userId } = useParams();
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -25,6 +31,12 @@ function App() {
         {
           path: "/predavaci",
           element: <Lecturers />,
+          children: [
+            {
+              path: `/${userId}`,
+              element: <Workshops />,
+            },
+          ],
         },
         {
           path: "/administracija",

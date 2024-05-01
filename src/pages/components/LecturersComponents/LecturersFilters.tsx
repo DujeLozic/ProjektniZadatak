@@ -134,7 +134,8 @@ function LecturersFilters({
         <div className="workshops">
           {lecturer.map((lc) => {
             if (
-              (filterTheme === "All" || filterTheme === lc.themes) &&
+              (filterTheme === "All" ||
+                lc.themes.find((theme) => theme.name === filterTheme)) &&
               (filterOrganization === "All" ||
                 filterOrganization === lc.organization)
             ) {
