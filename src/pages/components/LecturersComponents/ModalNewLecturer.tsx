@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import Select from "react-select/base";
 import { ILecturers, IOrganizationts, IThemes } from "../../../interface";
 import axios from "axios";
-import { Options, OptionsOrGroups } from "react-select";
+import Select, { OptionsOrGroups } from "react-select";
 
 interface InputForm {
   id: string;
@@ -10,6 +9,11 @@ interface InputForm {
   bio: string;
   organization: string;
   themes: IThemes[];
+}
+
+interface Option {
+  value: string;
+  label: string;
 }
 
 function ModalNewLecturer({
@@ -29,9 +33,15 @@ function ModalNewLecturer({
     themes: [],
   });
 
+  const mapValuesToOptions = (values: IThemes[]): OptionsOrGroups<Option> => {
+    return values.map((theme) => {
+      return { value: theme.id, label: theme.name };
+    });
+  };
+
   const [themes, setThemes] = useState<IThemes[]>([]);
   const [organizations, setOrganizations] = useState<IOrganizationts[]>([]);
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [selectedOptions, setSelectedOptions] = useState<readonly Option[]>([]);
 
   useEffect(() => {
     Promise.all([
@@ -66,13 +76,18 @@ function ModalNewLecturer({
       .catch((err) => console.log(err.message));
   };
 
-  const handleSelectedOptions = (selectedOptions: any) => {
-    setSelectedOptions(selectedOptions);
+  const mapOptionsToValues = (options: readonly Option[]): IThemes[] => {
+    return options.map((option) => {
+      return { id: option.value, name: option.label };
+    });
   };
 
-  const mapValuesToOptions = (): OptionsOrGroups<Option> => {
-    return themes.map((theme) => {
-      return { value: theme.id, label: theme.name };
+  const onChangeTheme = (option: readonly Option[]) => {
+    setSelectedOptions(option);
+    console.log(option);
+    setFormData({
+      ...formData,
+      themes: mapOptionsToValues(option),
     });
   };
 
@@ -137,11 +152,13 @@ function ModalNewLecturer({
           <div className="modalInputElements">
             <label htmlFor="ThemesLec">Teme: </label>
             <Select
+              className="multiSelect"
               id="ThemesLec"
-              options={mapValuesToOptions()}
+              options={mapValuesToOptions(themes)}
               value={selectedOptions}
-              onChange={handleSelectedOptions}
+              onChange={onChangeTheme}
               isMulti={true}
+              required
             />
           </div>
 

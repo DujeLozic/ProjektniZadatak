@@ -33,6 +33,7 @@ function ModalEditLecturer({
     organization: "",
     themes: [],
   });
+
   const mapValuesToOptions = (values: IThemes[]): OptionsOrGroups<Option> => {
     return values.map((theme) => {
       return { value: theme.id, label: theme.name };

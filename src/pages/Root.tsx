@@ -6,11 +6,14 @@ export const Root = () => {
   return (
     <>
       <nav>
-        <img
-          className="logoNav"
-          src="./src/assets/juniorDev.png"
-          alt="junior dev logo"
-        />
+        <Link to="/">
+          <img
+            className="logoNav"
+            src="./src/assets/juniorDev.png"
+            alt="junior dev logo"
+          />
+        </Link>
+
         <Link className="navLink" to="/radionice">
           Radionice
         </Link>

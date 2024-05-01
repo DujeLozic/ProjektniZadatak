@@ -1,0 +1,32 @@
+.listElement {
+  height: 50px;
+  width: 600px;
+  margin-bottom: 10px;
+  background-color: aliceblue;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.asdasd {
+  display: flex;
+  width: 400px;
+  justify-content: space-evenly;
+}
+
+.listName {
+  width: 150px;
+}
+
+.listNoOfApp {
+  width: 30px;
+}
+
+.listDate {
+}
+
+.listEditButton {
+}
+
+.listButtons .listDeleteButton {
+}

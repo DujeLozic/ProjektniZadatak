@@ -14,12 +14,6 @@ function WorkshopEl({ workshop }: { workshop: IWorkshops }) {
   };
 
   const handleModalEditOpener = (e: string) => {
-    if (e === "y") {
-      console.log("asdasdsdasdasdas");
-      setIsEditModal(true);
-    } else {
-      setIsEditModal(false);
-    }
     setModalEditOpener(!modalEditOpener);
   };
 
@@ -53,7 +47,6 @@ function WorkshopEl({ workshop }: { workshop: IWorkshops }) {
       </button>
       {modalEditOpener && (
         <ModalEditWorkshop
-          isEditModal={isEditModal}
           workshop={workshop}
           workshopId={workshop.id}
           setModalEditOpener={setModalEditOpener}

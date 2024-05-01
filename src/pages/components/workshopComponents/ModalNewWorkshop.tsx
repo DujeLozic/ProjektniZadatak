@@ -17,15 +17,12 @@ interface InputForm {
   theme: string;
   difficulty: string;
   number_of_aplications: number;
-  img: string;
 }
 
 function ModalNewWorkshop({
-  workshop,
   setWorkshop,
   handleModalNewOpener,
 }: {
-  workshop: IWorkshops[];
   setWorkshop: React.Dispatch<React.SetStateAction<IWorkshops[]>>;
   handleModalNewOpener: () => void;
 }) {
@@ -38,7 +35,6 @@ function ModalNewWorkshop({
     theme: "",
     difficulty: "",
     number_of_aplications: 0,
-    img: "",
   });
 
   const [lecturers, setLecturers] = useState<ILecturers[]>([]);
@@ -62,8 +58,7 @@ function ModalNewWorkshop({
           description: resFormData.data.description,
           theme: resFormData.data.theme,
           difficulty: resFormData.data.difficulty,
-          number_of_aplications: resFormData.data.number_of_aplications,
-          img: resFormData.data.theme,
+          number_of_aplications: 0,
         }));
 
         setLecturers(resLecturers.data);
@@ -194,7 +189,7 @@ function ModalNewWorkshop({
             </select>
           </div>
           <div>
-            <button type="submit" className="submitModalButton">
+            <button className="submitModalButton" type="submit">
               Dodaj
             </button>
           </div>

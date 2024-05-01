@@ -31,12 +31,6 @@ function App() {
         {
           path: "/predavaci",
           element: <Lecturers />,
-          children: [
-            {
-              path: `/${userId}`,
-              element: <Workshops />,
-            },
-          ],
         },
         {
           path: "/administracija",

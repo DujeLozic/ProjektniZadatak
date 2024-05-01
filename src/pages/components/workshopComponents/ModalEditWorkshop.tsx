@@ -23,12 +23,10 @@ interface InputForm {
 function ModalEditWorkshop({
   workshop,
   workshopId,
-  isEditModal,
   setModalEditOpener,
 }: {
   workshop: IWorkshops;
   workshopId: string;
-  isEditModal: boolean;
   setModalEditOpener: (arg0: boolean) => void;
 }) {
   const [formData, setFormData] = useState<InputForm>({
@@ -55,28 +53,24 @@ function ModalEditWorkshop({
       axios.get<IThemes[]>("http://localhost:3001/themes"),
     ])
       .then(([resFormData, resLecturers, resDifficultys, resThemes]) => {
-        if (isEditModal) {
-          setFormData((prevFormData) => ({
-            ...prevFormData,
-            id: resFormData.data.id,
-            name: resFormData.data.name,
-            date: resFormData.data.date,
-            lecturer: resFormData.data.lecturer,
-            description: resFormData.data.description,
-            theme: resFormData.data.theme,
-            difficulty: resFormData.data.difficulty,
-            number_of_aplications: resFormData.data.number_of_aplications,
-            img: resFormData.data.img,
-          }));
-        }
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          id: resFormData.data.id,
+          name: resFormData.data.name,
+          date: resFormData.data.date,
+          lecturer: resFormData.data.lecturer,
+          description: resFormData.data.description,
+          theme: resFormData.data.theme,
+          difficulty: resFormData.data.difficulty,
+          number_of_aplications: resFormData.data.number_of_aplications,
+          img: resFormData.data.img,
+        }));
 
         setLecturers(resLecturers.data);
         setDifficultys(resDifficultys.data);
         setThemes(resThemes.data);
       })
       .catch((err) => console.log(err.message));
-
-    console.log(isEditModal);
   }, []);
 
   const handleSubmit = (e: any) => {
