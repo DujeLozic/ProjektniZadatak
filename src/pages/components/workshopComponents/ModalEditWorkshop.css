@@ -1,0 +1,54 @@
+#DateWs {
+  height: 17px;
+  width: 85px;
+  margin-bottom: 10px;
+  border: solid 1px rgb(224, 224, 224);
+  border-radius: 4px;
+}
+
+#NameWs {
+  height: 17px;
+  width: 130px;
+  margin-bottom: 10px;
+  border: solid 1px rgb(224, 224, 224);
+  border-radius: 4px;
+}
+
+#DescriptionWs {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 10px;
+  width: 250px;
+  height: 58px;
+  border: solid 1px rgb(224, 224, 224);
+  border-radius: 4px;
+}
+
+#LecturersWs {
+  height: 20px;
+  width: 150px;
+  margin-bottom: 10px;
+  border: solid 1px rgb(224, 224, 224);
+  border-radius: 4px;
+}
+
+#DifficultysWs {
+  height: 20px;
+  width: 150px;
+  margin-bottom: 10px;
+  border: solid 1px rgb(224, 224, 224);
+  border-radius: 4px;
+}
+
+#ThemeWs {
+  height: 20px;
+  width: 150px;
+  margin-bottom: 45px;
+  border: solid 1px rgb(224, 224, 224);
+  border-radius: 4px;
+}
+
+.modalInputElements {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+}

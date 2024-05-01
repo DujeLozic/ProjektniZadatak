@@ -1,0 +1,351 @@
+{
+  "workshops": [
+    {
+      "id": "radionica_1",
+      "name": "Bruncek111111",
+      "date": "1.1.2025",
+      "lecturer": "Ana Anić",
+      "description": "radi za mid placu",
+      "theme": "Next.js",
+      "difficulty": "Junior",
+      "number_of_aplications": 10,
+      "img": ""
+    },
+    {
+      "id": "radionica_2",
+      "name": "smeče",
+      "date": "06.06.2025",
+      "lecturer": "Predavac 1",
+      "description": "smeče veliko od radionice",
+      "theme": "Node.js",
+      "difficulty": "Senior",
+      "number_of_aplications": 2,
+      "img": "src/assets/React.png"
+    },
+    {
+      "id": "radionica_3",
+      "name": "Radionica 3",
+      "date": "01.01.2025",
+      "lecturer": "Predavac 1",
+      "description": "Kratki opis radionice 3",
+      "theme": "Next.js",
+      "difficulty": "Mid",
+      "number_of_aplications": 0,
+      "img": "src/assets/NextJS.png"
+    },
+    {
+      "id": "radionica_4",
+      "name": "Bruncek",
+      "date": "1.1.2025",
+      "lecturer": "Predavac 2",
+      "description": "radi za mid placu",
+      "theme": "React",
+      "difficulty": "Senior",
+      "number_of_aplications": 8,
+      "img": ""
+    },
+    {
+      "id": "radionica_5",
+      "name": "smeče",
+      "date": "06.06.2025",
+      "lecturer": "Predavac 1",
+      "description": "smeče veliko od radionice",
+      "theme": "Node.js",
+      "difficulty": "Senior",
+      "number_of_aplications": 2,
+      "img": "src/assets/React.png"
+    },
+    {
+      "id": "radionica_6",
+      "name": "Radionica 3",
+      "date": "01.01.2025",
+      "lecturer": "Predavac 1",
+      "description": "Kratki opis radionice 3",
+      "theme": "Next.js",
+      "difficulty": "Mid",
+      "number_of_aplications": 0,
+      "img": "src/assets/NextJS.png"
+    },
+    {
+      "id": "radionica_7",
+      "name": "Bruncek",
+      "date": "1.1.2025",
+      "lecturer": "Predavac 2",
+      "description": "radi za mid placu",
+      "theme": "React",
+      "difficulty": "Senior",
+      "number_of_aplications": 8,
+      "img": ""
+    },
+    {
+      "id": "radionica_8",
+      "name": "smeče",
+      "date": "06.06.2025",
+      "lecturer": "Predavac 1",
+      "description": "smeče veliko od radionice",
+      "theme": "Node.js",
+      "difficulty": "Senior",
+      "number_of_aplications": 2,
+      "img": "src/assets/React.png"
+    },
+    {
+      "id": "radionica_9",
+      "name": "Radionica 3",
+      "date": "01.01.2025",
+      "lecturer": "Predavac 1",
+      "description": "Kratki opis radionice 3",
+      "theme": "Next.js",
+      "difficulty": "Mid",
+      "number_of_aplications": 0,
+      "img": "src/assets/NextJS.png"
+    },
+    {
+      "id": "radionica_10",
+      "name": "Bruncek",
+      "date": "1.1.2025",
+      "lecturer": "Predavac 2",
+      "description": "radi za mid placu",
+      "theme": "React",
+      "difficulty": "Senior",
+      "number_of_aplications": 8,
+      "img": ""
+    },
+    {
+      "id": "radionica_11",
+      "name": "smeče",
+      "date": "06.06.2025",
+      "lecturer": "Predavac 1",
+      "description": "smeče veliko od radionice",
+      "theme": "Node.js",
+      "difficulty": "Senior",
+      "number_of_aplications": 2,
+      "img": "src/assets/React.png"
+    },
+    {
+      "id": "radionica_12",
+      "name": "Radionica 3",
+      "date": "01.01.2025",
+      "lecturer": "Predavac 1",
+      "description": "Kratki opis radionice 3",
+      "theme": "Next.js",
+      "difficulty": "Mid",
+      "number_of_aplications": 0,
+      "img": "src/assets/NextJS.png"
+    },
+    {
+      "id": "radionica_13",
+      "name": "Radionica 4",
+      "date": "01.01.2025",
+      "lecturer": "Predavac 2",
+      "description": "Kratki opis radionice 4",
+      "theme": "Node.js",
+      "difficulty": "Senior",
+      "number_of_aplications": 0,
+      "img": "src/assets/NodeJS.png"
+    },
+    {
+      "id": "188a",
+      "name": "asda",
+      "date": "20.10.2024",
+      "lecturer": "Predavac 1",
+      "description": "asdasdasd",
+      "theme": "React",
+      "difficulty": "Junior"
+    },
+    {
+      "id": "14ec",
+      "name": "Bruncek1111",
+      "date": "1.1.2025",
+      "lecturer": "Predavac 2",
+      "description": "1111111111",
+      "theme": "Node.js",
+      "difficulty": "Senior"
+    },
+    {
+      "id": "67f0",
+      "name": "smeče",
+      "date": "1.1.2025",
+      "lecturer": "Predavac 1",
+      "description": "smece",
+      "theme": "Express",
+      "difficulty": "Mid"
+    },
+    {
+      "id": "2461",
+      "name": "smeče2",
+      "date": "1.1.2000",
+      "lecturer": "Ana Anić",
+      "description": "asdasd",
+      "theme": "React",
+      "difficulty": "Junior"
+    }
+  ],
+  "lecturers": [
+    {
+      "id": "predavac_1",
+      "name": "Ana Anić",
+      "bio": "Biografija predavaca 1",
+      "themes": "React",
+      "organization": "Digital Dalmacija"
+    },
+    {
+      "id": "predavac_2",
+      "name": "Petra Petrić",
+      "bio": "Biografija predavaca 2",
+      "organization": "Info Bip",
+      "themes": "Express"
+    },
+    {
+      "id": "predavac_3",
+      "name": "Ivana Ivančić",
+      "bio": "Biografija predavaca 3",
+      "themes": "Next.js",
+      "organization": "Info Bip"
+    },
+    {
+      "id": "predavac_4",
+      "name": "Ante Antić",
+      "bio": "Biografija predavaca 4",
+      "themes": "Node.js",
+      "organization": "Locastic"
+    },
+    {
+      "id": "fdfa",
+      "name": "asdasdada",
+      "bio": "asdasdasad",
+      "organization": "Agilno"
+    }
+  ],
+  "organization": [
+    {
+      "id": "organizacija_1",
+      "name": "Digital Dalmacija",
+      "description": "Opis organizacije 1",
+      "workshop": "radionica_1"
+    },
+    {
+      "id": "organizacija_2",
+      "name": "Agilno",
+      "description": "Opis organizacije 2",
+      "workshop": "radionica_2"
+    },
+    {
+      "id": "organizacija_3",
+      "name": "Info Bip",
+      "description": "Opis organizacije 3",
+      "workshop": "radionica_2"
+    },
+    {
+      "id": "organizacija_4",
+      "name": "Locastic",
+      "description": "Opis organizacije 4",
+      "workshop": "radionica_4"
+    }
+  ],
+  "difficultys": [
+    {
+      "id": "junior",
+      "name": "Junior"
+    },
+    {
+      "id": "mid",
+      "name": "Mid"
+    },
+    {
+      "id": "senior",
+      "name": "Senior"
+    }
+  ],
+  "themes": [
+    {
+      "id": "react",
+      "name": "React"
+    },
+    {
+      "id": "express",
+      "name": "Express"
+    },
+    {
+      "id": "next_js",
+      "name": "Next.js"
+    },
+    {
+      "id": "node_js",
+      "name": "Node.js"
+    }
+  ],
+  "applicants": [
+    {
+      "id": "0",
+      "name": "asda",
+      "email": "dujelozic@gmail.comasd",
+      "reason": "asdad"
+    },
+    {
+      "id": "0",
+      "name": "asdasd",
+      "email": "marlo@marlo.hr",
+      "reason": "asdasdasdasd"
+    },
+    {
+      "id": "0",
+      "name": "asd",
+      "email": "marlo@st.t-com.hr",
+      "reason": "asdasdasdadasd"
+    },
+    {
+      "id": "0",
+      "name": "asdasd",
+      "email": "dujelozic@gmail.com",
+      "reason": "asdasdasdasasdasasaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "id": "0",
+      "name": "asdasda",
+      "email": "codmaniacdudu@gmail.com",
+      "reason": "11111111111111"
+    },
+    {
+      "id": "0",
+      "name": "asdasdas123123",
+      "email": "marlo@marlo.hr",
+      "reason": "123123dasdd123sad"
+    },
+    {
+      "id": "0",
+      "name": "asdasdasda",
+      "email": "codmaniacdudu@gmail.com",
+      "reason": "asdasdasdasdasd"
+    },
+    {
+      "id": "0",
+      "name": "dasdasas",
+      "email": "dujelozic@gmail.com",
+      "reason": "111111111111111111111111111111"
+    },
+    {
+      "id": "0",
+      "name": "333333333",
+      "email": "11111asda1111@ggg.com",
+      "reason": "aa2135465461321354"
+    },
+    {
+      "id": "0",
+      "name": "asdad",
+      "email": "dujelozic@gmail.com",
+      "reason": "ddd"
+    },
+    {
+      "id": "0",
+      "name": "aaaaaaaa",
+      "email": "marlo@st.t-com.hr",
+      "reason": "aaaaaaaa"
+    },
+    {
+      "id": "0",
+      "name": "asdasd",
+      "email": "dujelozic@gmail.comasdasd",
+      "reason": "asdasdaadaasda"
+    }
+  ]
+}

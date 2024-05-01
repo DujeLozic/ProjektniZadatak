@@ -1,0 +1,84 @@
+.lecturerElement {
+  height: 400px;
+  width: 250px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border: solid;
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lecturerImage {
+  height: 120px;
+  width: 120px;
+  margin-top: 20px;
+  border: solid 2px rgb(224, 224, 224);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.lecturerName {
+  font-size: large;
+  margin-bottom: 0px;
+}
+
+.lecturerBio {
+  height: 50px;
+}
+
+.lecturerOrganization {
+  margin-bottom: 0px;
+  overflow: auto;
+}
+
+.lecturerThemes {
+  margin-top: 2px;
+}
+
+.buttonsContanier {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0px;
+}
+
+.viewWorkshopsButton {
+  height: 30px;
+  width: 130px;
+  border: solid 0px;
+  border-radius: 4px;
+  background-color: rgba(0, 127, 171, 255);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.12s;
+  transition: color 0.12s;
+}
+
+.viewWorkshopsButton:hover {
+  background-color: rgb(189, 242, 255);
+  color: rgba(0, 127, 171, 255);
+}
+
+.editLecturerButton {
+  height: 30px;
+  width: 70px;
+  border: solid 0px;
+  border-radius: 4px;
+  background-color: rgb(211, 172, 0);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.12s;
+  transition: color 0.12s;
+}
+
+.editLecturerButton:hover {
+  background-color: rgb(253, 244, 203);
+  color: rgb(255, 187, 0);
+}
+
+.lecturerDesc {
+  width: 200px;
+  height: 200px;
+}

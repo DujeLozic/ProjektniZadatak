@@ -1,0 +1,31 @@
+#NameLec {
+  height: 17px;
+  width: 130px;
+  margin-bottom: 10px;
+  border: solid 1px rgb(224, 224, 224);
+  border-radius: 4px;
+}
+
+#BioLec {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 10px;
+  width: 200px;
+  height: 58px;
+  border: solid 1px rgb(224, 224, 224);
+  border-radius: 4px;
+}
+
+#OranizationLec {
+  height: 20px;
+  width: 150px;
+  margin-bottom: 10px;
+  border: solid 1px rgb(224, 224, 224);
+  border-radius: 4px;
+}
+
+#ThemesLec {
+  width: 150px;
+  margin-bottom: 10px;
+  border: solid 1px rgb(224, 224, 224);
+  border-radius: 4px;
+}

@@ -1,0 +1,105 @@
+nav {
+  height: 60px;
+  margin-top: 5px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.navLink {
+  color: rgb(95, 95, 95);
+  width: 150px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 15px;
+  transition: background-color 0.12s;
+  transition: color 0.12s;
+}
+
+.navLink:hover {
+  background-color: rgb(231, 231, 231);
+  color: rgb(0, 0, 0);
+}
+
+.logoNav {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logoFooter {
+  height: 60px;
+}
+
+.line {
+  margin-top: 5px;
+  height: 1px;
+  width: 100%;
+  background-color: rgb(224, 224, 224);
+}
+
+footer {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.socialIcons {
+  width: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 25px;
+}
+
+.facebookIcon {
+  color: rgba(0, 127, 171, 255);
+  height: 28px;
+  width: 28px;
+  cursor: pointer;
+  transition: color 0.12s;
+}
+
+.facebookIcon:hover {
+  color: rgb(0, 110, 255);
+}
+
+.instagramIcon {
+  color: rgba(0, 127, 171, 255);
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  transition: color 0.12s;
+}
+
+.instagramIcon:hover {
+  color: rgb(197, 66, 14);
+}
+
+.linkedinIcon {
+  color: rgba(0, 127, 171, 255);
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  transition: color 0.12s;
+}
+
+.linkedinIcon:hover {
+  color: rgb(0, 83, 190);
+}
+
+.youtubeIcon {
+  color: rgba(0, 127, 171, 255);
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  transition: color 0.12s;
+}
+
+.youtubeIcon:hover {
+  color: red;
+}

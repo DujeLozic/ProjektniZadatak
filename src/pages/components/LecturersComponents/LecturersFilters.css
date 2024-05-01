@@ -1,0 +1,56 @@
+.workshopsAndFilters {
+  display: flex;
+  justify-content: flex-start;
+  color: rgb(95, 95, 95);
+}
+
+.filters {
+  margin-left: 20px;
+  margin-top: 75px;
+}
+
+.filtersInner {
+  margin-bottom: 75px;
+}
+
+.filters div div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  margin-top: 2px;
+}
+
+.workshops {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  margin-left: 100px;
+}
+
+.workshopButtonContanier {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.newWorkshopButton {
+  display: inline;
+  height: 40px;
+  width: 120px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border: solid 0px;
+  border-radius: 4px;
+  background-color: rgb(211, 172, 0);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.12s;
+  transition: color 0.12s;
+}
+
+.newWorkshopButton:hover {
+  background-color: rgb(253, 244, 203);
+  color: rgb(255, 187, 0);
+}

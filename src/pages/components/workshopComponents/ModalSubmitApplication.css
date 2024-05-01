@@ -1,0 +1,81 @@
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.modal {
+  width: 300px;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.modalHeader {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.modalInputs {
+  margin-bottom: 15px;
+  width: 200px;
+  height: 17px;
+  border: solid 1px rgb(224, 224, 224);
+  border-radius: 4px;
+}
+
+.modalTextArea {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 75px;
+  width: 200px;
+  height: 100px;
+  border: solid 1px rgb(224, 224, 224);
+  border-radius: 4px;
+}
+
+.submitModalButton {
+  height: 40px;
+  width: 100px;
+  border: solid 0px;
+  border-radius: 4px;
+  background-color: rgba(0, 127, 171, 255);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.12s;
+  transition: color 0.12s;
+}
+
+.submitModalButton:hover {
+  background-color: rgb(189, 242, 255);
+  color: rgba(0, 127, 171, 255);
+}
+
+.modalThankYouNote {
+  margin-top: 80px;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.modalSmily {
+  font-size: 70px;
+  margin-top: -36px;
+}
