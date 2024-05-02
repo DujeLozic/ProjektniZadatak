@@ -29,14 +29,22 @@ export const Root = () => {
       <main>
         <Outlet />
       </main>
-      <div>
+      <footer>
         <div className="line"></div>
-        <footer>
+
+        <div className="footerUpper">
           <img
             className="logoFooter"
             src="./src/assets/digDal.png"
             alt="digital dalmacija logo"
           />
+          <div className="footerInfo">
+            <p>Kontakt podaci Domovinskog rata 2/IV, 21000 Split</p>
+            <p>tel. 021/400-027 i 021/400-158</p>
+            <a href="mailto:info@digitalnadalmacija.hr​">
+              info@digitalnadalmacija.hr​
+            </a>
+          </div>
           <div className="socialIcons">
             <a
               href="https://web.facebook.com/ictzupanija/?_rdc=1&_rdr"
@@ -67,8 +75,14 @@ export const Root = () => {
               <FaYoutube className="youtubeIcon" />
             </a>
           </div>
-        </footer>
-      </div>
+        </div>
+        <div className="footerUnder">
+          <p>
+            © Sva prava pridržana Splitsko-dalmatinska Županija 2024 - Izradio
+            Duje Lozić
+          </p>
+        </div>
+      </footer>
     </>
   );
 };

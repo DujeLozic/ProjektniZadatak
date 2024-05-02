@@ -37,7 +37,7 @@ function WorkshopsFilters({
       {modalNewOpener && (
         <ModalNewWorkshop
           setWorkshop={setWorkshop}
-          handleModalNewOpener={handleModalNewOpener}
+          setModalNewOpener={setModalNewOpener}
         />
       )}
       <div className="workshopsAndFilters">

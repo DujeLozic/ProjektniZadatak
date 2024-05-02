@@ -7,13 +7,12 @@ import ModalEditWorkshop from "./ModalEditWorkshop";
 function WorkshopEl({ workshop }: { workshop: IWorkshops }) {
   const [modalSubmitOpener, setModalSubmitOpener] = useState(false);
   const [modalEditOpener, setModalEditOpener] = useState(false);
-  const [isEditModal, setIsEditModal] = useState(false);
 
   const handleModalSubmitOpener = () => {
     setModalSubmitOpener(!modalSubmitOpener);
   };
 
-  const handleModalEditOpener = (e: string) => {
+  const handleModalEditOpener = () => {
     setModalEditOpener(!modalEditOpener);
   };
 
@@ -40,9 +39,10 @@ function WorkshopEl({ workshop }: { workshop: IWorkshops }) {
           workshop={workshop}
           workshopId={workshop.id}
           setModalSubmitOpener={setModalSubmitOpener}
+          workshopName={workshop.name}
         />
       )}
-      <button className="editButton" onClick={() => handleModalEditOpener("y")}>
+      <button className="editButton" onClick={handleModalEditOpener}>
         Uredi
       </button>
       {modalEditOpener && (

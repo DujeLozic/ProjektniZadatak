@@ -66,7 +66,7 @@ function ModalEditLecturer({
       .catch((err) => console.log(err.message));
   }, []);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     axios

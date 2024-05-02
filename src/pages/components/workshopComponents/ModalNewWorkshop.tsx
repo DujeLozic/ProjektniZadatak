@@ -21,10 +21,10 @@ interface InputForm {
 
 function ModalNewWorkshop({
   setWorkshop,
-  handleModalNewOpener,
+  setModalNewOpener,
 }: {
   setWorkshop: React.Dispatch<React.SetStateAction<IWorkshops[]>>;
-  handleModalNewOpener: () => void;
+  setModalNewOpener: (arg0: boolean) => void;
 }) {
   const [formData, setFormData] = useState<InputForm>({
     id: "",
@@ -68,14 +68,14 @@ function ModalNewWorkshop({
       .catch((err) => console.log(err.message));
   }, []);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     axios
       .post(`http://localhost:3001/workshops/`, formData)
       .then((res) => {
         setWorkshop((workshop) => [...workshop, res.data]);
-        handleModalNewOpener();
+        setModalNewOpener(false);
       })
       .catch((err) => console.log(err.message));
   };
@@ -85,13 +85,13 @@ function ModalNewWorkshop({
       className="modalContainer"
       onClick={(e) => {
         if ((e.target as HTMLElement).className === "modalContainer") {
-          handleModalNewOpener();
+          setModalNewOpener(false);
         }
       }}
     >
       <form onSubmit={handleSubmit}>
         <div className="modal">
-          <div className="close" onClick={handleModalNewOpener}>
+          <div className="close" onClick={() => setModalNewOpener(false)}>
             <p>x</p>
           </div>
           <div className="modalHeader">Dodaj novu radionicu</div>

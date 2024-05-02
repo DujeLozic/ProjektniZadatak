@@ -8,23 +8,27 @@ interface InputForm {
   name: string;
   email: string;
   reason: string;
+  workshop: string;
 }
 
 function ModalSubmitApplication({
   workshop,
   workshopId,
   setModalSubmitOpener,
+  workshopName,
 }: {
   workshop: IWorkshops;
   workshopId: string;
   setModalSubmitOpener: (arg0: boolean) => void;
+  workshopName: string;
 }) {
   const [applicants, setApplicants] = useState<IApplicants[]>([]);
   const [formData, setFormData] = useState<InputForm>({
-    id: applicants.length,
+    id: 0,
     name: "",
     email: "",
     reason: "",
+    workshop: "",
   });
   const [modalSubmitted, setModalSubmitted] = useState(false);
 
@@ -48,18 +52,18 @@ function ModalSubmitApplication({
     axios
       .post("http://localhost:3001/applicants", formData)
       .then((resFormData) => {
-        // setApplicants([...applicants, res.data]);
         setApplicants((prevFormData) => ({
           ...prevFormData,
-          id: applicants.length + 1,
+          id: prevFormData.length + 1,
           name: resFormData.data.name,
           email: resFormData.data.email,
           reason: resFormData.data.reason,
+          workshop: resFormData.data.workshop,
         }));
       });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     sendData(e);
     increaseApplicants(e);
     handleModalSubmitted();
@@ -109,7 +113,12 @@ function ModalSubmitApplication({
                 maxLength={25}
                 value={formData.name}
                 onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
+                  setFormData({
+                    ...formData,
+                    name: e.target.value,
+                    id: applicants.length,
+                    workshop: workshopName,
+                  })
                 }
                 required
               ></input>

@@ -1,0 +1,23 @@
+.modalInputElementsOrg {
+  display: flex;
+  flex-direction: column;
+}
+
+#NameOrg {
+  height: 17px;
+  width: 130px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: solid 1px rgb(224, 224, 224);
+  border-radius: 4px;
+}
+
+#DescriptionOrg {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 5px;
+  margin-bottom: 119px;
+  width: 250px;
+  height: 58px;
+  border: solid 1px rgb(224, 224, 224);
+  border-radius: 4px;
+}

@@ -19,11 +19,11 @@ interface Option {
 function ModalNewLecturer({
   lecturer,
   setLecturer,
-  handleModalNewOpener,
+  setModalNewOpener,
 }: {
   lecturer: ILecturers[];
   setLecturer: React.Dispatch<React.SetStateAction<ILecturers[]>>;
-  handleModalNewOpener: () => void;
+  setModalNewOpener: (arg0: boolean) => void;
 }) {
   const [formData, setFormData] = useState<InputForm>({
     id: "",
@@ -64,14 +64,14 @@ function ModalNewLecturer({
       .catch((err) => console.log(err.message));
   }, []);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     axios
       .post("http://localhost:3001/lecturers", formData)
       .then((res) => {
         setLecturer(() => [...lecturer, res.data]);
-        handleModalNewOpener();
+        setModalNewOpener(false);
       })
       .catch((err) => console.log(err.message));
   };
@@ -96,13 +96,13 @@ function ModalNewLecturer({
       className="modalContainer"
       onClick={(e) => {
         if ((e.target as HTMLElement).className === "modalContainer") {
-          handleModalNewOpener;
+          setModalNewOpener(false);
         }
       }}
     >
       <form onSubmit={handleSubmit}>
         <div className="modal">
-          <div className="close" onClick={handleModalNewOpener}>
+          <div className="close" onClick={() => setModalNewOpener(false)}>
             <p>x</p>
           </div>
           <div className="modalHeader">Dodaj novog predavača</div>

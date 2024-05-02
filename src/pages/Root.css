@@ -8,15 +8,17 @@ nav {
 
 .navLink {
   color: rgb(95, 95, 95);
-  width: 150px;
-  height: 60px;
+  font-size: large;
+  width: 130px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  border-radius: 15px;
+  border-radius: 10px;
   transition: background-color 0.12s;
   transition: color 0.12s;
+  margin-left: 10px;
 }
 
 .navLink:hover {
@@ -26,7 +28,8 @@ nav {
 
 .logoNav {
   height: 50px;
-  margin-right: 10px;
+  margin-right: 20px;
+  margin-left: 30px;
 }
 
 .logoFooter {
@@ -41,11 +44,27 @@ nav {
 }
 
 footer {
+  height: 70px;
+  color: rgb(95, 95, 95);
+}
+
+.footerUpper {
+  height: 65px;
   margin-top: 5px;
   margin-bottom: 5px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.footerUnder {
+  height: 30px;
+  color: rgb(211, 172, 0);
+  font-size: small;
+  background-color: rgba(0, 127, 171, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .socialIcons {
@@ -102,4 +121,20 @@ footer {
 
 .youtubeIcon:hover {
   color: red;
+}
+
+.footerInfo {
+  width: 300px;
+  height: 60px;
+  font-size: small;
+  text-wrap: nowrap;
+}
+
+.footerInfo p {
+  margin: 2px;
+}
+
+.footerInfo a {
+  color: rgb(95, 95, 95);
+  text-decoration: none;
 }

@@ -38,7 +38,7 @@ function LecturersFilters({
         <ModalNewLecturer
           lecturer={lecturer}
           setLecturer={setLecturer}
-          handleModalNewOpener={handleModalNewOpener}
+          setModalNewOpener={setModalNewOpener}
         />
       )}
       <div className="workshopsAndFilters">
@@ -90,7 +90,9 @@ function LecturersFilters({
           <div>
             <p>Organizacije</p>
             <div>
-              <label htmlFor="Digital Dalmacija">Digital Dalmacija</label>
+              <label className="labelDD" htmlFor="Digital Dalmacija">
+                Digital Dalmacija
+              </label>
               <input
                 type="checkbox"
                 id="Digital Dalmacija"

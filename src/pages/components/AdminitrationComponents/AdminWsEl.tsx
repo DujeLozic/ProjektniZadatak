@@ -6,15 +6,17 @@ import "./AdminEl.css";
 function AdminWsEl({ workshop }: { workshop: IWorkshops }) {
   const [modalEditOpener, setModalEditOpener] = useState(false);
 
-  const handleModalEditOpener = (e: any) => {
+  const handleModalEditOpener = () => {
     setModalEditOpener(!modalEditOpener);
   };
   return (
     <>
       <div className="listElement">
-        <div className="asdasd">
+        <div>
           <span className="listName">{workshop.name}</span>
-          <span className="listNoOfApp">{workshop.number_of_aplications}</span>
+          <span className="listNoOfApp">
+            Broj prijava: {workshop.number_of_aplications}
+          </span>
           <span className="listDate">{workshop.date}</span>
         </div>
 

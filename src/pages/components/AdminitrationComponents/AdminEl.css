@@ -1,32 +1,80 @@
 .listElement {
   height: 50px;
-  width: 600px;
+  width: 900px;
   margin-bottom: 10px;
-  background-color: aliceblue;
+  border: 1px solid rgb(224, 224, 224);
   border-radius: 10px;
   display: flex;
   align-items: center;
-}
-
-.asdasd {
-  display: flex;
-  width: 400px;
-  justify-content: space-evenly;
+  color: rgb(95, 95, 95);
 }
 
 .listName {
-  width: 150px;
+  display: inline-block;
+  margin-left: 20px;
+  width: 200px;
 }
 
 .listNoOfApp {
-  width: 30px;
+  display: inline-block;
+  margin-left: 20px;
+  width: 200px;
+}
+
+.listDesc {
+  display: inline-block;
+  margin-left: 20px;
+  width: 470px;
+  margin-right: 10px;
 }
 
 .listDate {
+  display: inline-block;
+  margin-left: 20px;
+  width: 260px;
+}
+
+.listOrg {
+  display: inline-block;
+  margin-left: 20px;
+  width: 200px;
+}
+
+.listThemes {
+  display: inline-block;
+  margin-left: 20px;
+  width: 260px;
 }
 
 .listEditButton {
+  height: 30px;
+  width: 70px;
+  border: solid 0px;
+  border-radius: 4px;
+  background-color: rgba(0, 127, 171, 255);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.12s;
+  transition: color 0.12s;
 }
 
-.listButtons .listDeleteButton {
+.listEditButton:hover {
+  background-color: rgb(189, 242, 255);
+  color: rgba(0, 127, 171, 255);
+}
+
+.listDeleteButton {
+  height: 30px;
+  width: 70px;
+  margin-left: 20px;
+  border: solid 0px;
+  border-radius: 4px;
+  background-color: rgba(0, 127, 171, 255);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.12s;
+}
+
+.listDeleteButton:hover {
+  background-color: rgb(255, 106, 73);
 }

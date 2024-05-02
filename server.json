@@ -8,7 +8,7 @@
       "description": "radi za mid placu",
       "theme": "Next.js",
       "difficulty": "Junior",
-      "number_of_aplications": 13,
+      "number_of_aplications": 20,
       "img": ""
     },
     {
@@ -19,7 +19,7 @@
       "description": "smeče veliko od radionice",
       "theme": "Node.js",
       "difficulty": "Senior",
-      "number_of_aplications": 2,
+      "number_of_aplications": 4,
       "img": "src/assets/React.png"
     },
     {
@@ -113,6 +113,16 @@
       "description": "smrad",
       "theme": "Express",
       "difficulty": "Senior",
+      "number_of_aplications": 0
+    },
+    {
+      "id": "40ca",
+      "name": "Zuhrica",
+      "date": "1.1.2000",
+      "lecturer": "Ana Anić",
+      "description": "adds",
+      "theme": "React",
+      "difficulty": "Junior",
       "number_of_aplications": 0
     }
   ],
@@ -208,32 +218,59 @@
           "name": "Node.js"
         }
       ]
+    },
+    {
+      "id": "1fe2",
+      "name": "Puhra",
+      "bio": "asdasdaa",
+      "organization": "Digital Dalmacija",
+      "themes": [
+        {
+          "id": "react",
+          "name": "React"
+        },
+        {
+          "id": "next_js",
+          "name": "Next.js"
+        }
+      ]
     }
   ],
   "organization": [
     {
       "id": "organizacija_1",
-      "name": "Digital Dalmacija",
-      "description": "Opis organizacije 1",
-      "workshop": "radionica_1"
+      "name": "Digital Dalmacijaa",
+      "description": "O"
     },
     {
       "id": "organizacija_2",
       "name": "Agilno",
-      "description": "Opis organizacije 2",
-      "workshop": "radionica_2"
+      "description": "Opis organizacije 2"
     },
     {
       "id": "organizacija_3",
       "name": "Info Bip",
-      "description": "Opis organizacije 3",
-      "workshop": "radionica_2"
+      "description": "qweweqweqwqw"
     },
     {
       "id": "organizacija_4",
       "name": "Locastic",
-      "description": "Opis organizacije 4",
-      "workshop": "radionica_4"
+      "description": "Opis organizacije 4"
+    },
+    {
+      "id": "8c83",
+      "name": "Zuhrica",
+      "description": "asdasdad"
+    },
+    {
+      "id": "aea3",
+      "name": "qweqweqwq",
+      "description": "wqeqeqeq"
+    },
+    {
+      "id": "2379",
+      "name": "smečewefwer2",
+      "description": "242erw2"
     }
   ],
   "difficultys": [
@@ -388,6 +425,75 @@
       "name": "asdasd",
       "email": "dujelozic@gmail.com",
       "reason": "asdasds"
+    },
+    {
+      "id": 0,
+      "name": "asdasd",
+      "email": "dujelozic@gmail.com",
+      "reason": "asdadasdasd",
+      "workshop": ""
+    },
+    {
+      "id": 0,
+      "name": "fsdfsd",
+      "email": "dujelozic@gmail.com",
+      "reason": "sdfsdfsdfsdfsdfs",
+      "workshop": ""
+    },
+    {
+      "id": 0,
+      "name": "asdasdasd",
+      "email": "dujelozic@gmail.comasdasd",
+      "reason": "asdsdasds",
+      "workshop": ""
+    },
+    {
+      "id": 0,
+      "name": "adasdasd",
+      "email": "dujelozic@gmail.com",
+      "reason": "asdasdasdasdasds",
+      "workshop": ""
+    },
+    {
+      "id": 0,
+      "name": "asdasdasadaddaadadadadad",
+      "email": "codmaniacdudu@gmail.com",
+      "reason": "asdasdasasadaw1231",
+      "workshop": ""
+    },
+    {
+      "id": 0,
+      "name": "asdasdasa",
+      "email": "asdasdaasd@gggg.com",
+      "reason": "asdasdsd"
+    },
+    {
+      "id": 0,
+      "name": "dassdas",
+      "email": "dujelozic@gmail.com",
+      "reason": "asdasd",
+      "workshop": "Bruncek"
+    },
+    {
+      "id": 0,
+      "name": "asdasdas",
+      "email": "marlo@marlo.hr",
+      "reason": "asdasda",
+      "workshop": "smeče"
+    },
+    {
+      "id": 0,
+      "name": "asdad",
+      "email": "dujelozic@gmail.com",
+      "reason": "asdadssa",
+      "workshop": "Bruncek"
+    },
+    {
+      "id": 0,
+      "name": "asdasd",
+      "email": "dujelozic@gmail.com",
+      "reason": "asdasddad",
+      "workshop": "Bruncek"
     }
   ]
 }

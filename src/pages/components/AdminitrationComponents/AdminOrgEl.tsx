@@ -1,20 +1,20 @@
 import { useState } from "react";
 import { IOrganizationts } from "../../../interface";
-import ModalEditWorkshop from "../workshopComponents/ModalEditWorkshop";
 import "./AdminEl.css";
+import ModalEditOrganization from "./ModalEditOrganization";
 
 function AdminWsEl({ organization }: { organization: IOrganizationts }) {
   const [modalEditOpener, setModalEditOpener] = useState(false);
 
-  const handleModalEditOpener = (e: any) => {
+  const handleModalEditOpener = () => {
     setModalEditOpener(!modalEditOpener);
   };
   return (
     <>
       <div className="listElement">
-        <div className="asdasd">
+        <div>
           <span className="listName">{organization.name}</span>
-          <span className="listNoOfApp">{organization.description}</span>
+          <span className="listDesc">{organization.description}</span>
         </div>
 
         <div className="listButtons">
@@ -22,10 +22,10 @@ function AdminWsEl({ organization }: { organization: IOrganizationts }) {
             Uredi
           </button>
           {modalEditOpener && (
-            <ModalEditWorkshop
-              workshop={workshop}
-              workshopId={workshop.id}
-              setModalEditOpener={setModalEditOpener}
+            <ModalEditOrganization
+              organization={organization}
+              organizationId={organization.id}
+              handleModalEditOpener={handleModalEditOpener}
             />
           )}
           <button className="listDeleteButton">Izbriši</button>

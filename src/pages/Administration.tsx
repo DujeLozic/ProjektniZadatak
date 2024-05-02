@@ -5,12 +5,17 @@ import AdminWsEl from "./components/AdminitrationComponents/AdminWsEl";
 import AdminLcEl from "./components/AdminitrationComponents/AdminLcEl";
 import AdminOrgEl from "./components/AdminitrationComponents/AdminOrgEl";
 import "./Administration.css";
+import ModalNewWorkshop from "./components/workshopComponents/ModalNewWorkshop";
+import ModalNewLecturer from "./components/LecturersComponents/ModalNewLecturer";
+import ModalNewOrganization from "./components/AdminitrationComponents/ModalNewOrganization";
 
 export const Administration = () => {
   const [workshop, setWorkshop] = useState<IWorkshops[]>([]);
   const [lecturer, setLecturer] = useState<ILecturers[]>([]);
   const [organization, setOrganization] = useState<IOrganizationts[]>([]);
   const [table, setTable] = useState("workshops");
+  const [modalNewOpener, setModalNewOpener] = useState(false);
+  const [modalDeleteOpener, setModalDeleteOpener] = useState(false);
 
   useEffect(() => {
     Promise.all([
@@ -28,7 +33,24 @@ export const Administration = () => {
 
   const handleTable = (e: string) => {
     setTable(e);
-    console.log(table);
+  };
+
+  const handleModalNewOpener = () => {
+    setModalNewOpener(!modalNewOpener);
+  };
+
+  const handleModalDeleteOpener = () => {
+    setModalDeleteOpener(!modalDeleteOpener);
+  };
+
+  const handleNewElemenet = () => {
+    if (table === "workshops") {
+      setModalNewOpener(true);
+    } else if (table === "organizations") {
+      setModalNewOpener(true);
+    } else if (table === "lecturers") {
+      setModalNewOpener(true);
+    }
   };
 
   return (
@@ -44,8 +66,33 @@ export const Administration = () => {
           <p className="lcNav" onClick={() => handleTable("lecturers")}>
             Predavači
           </p>
-          <button className="buttonNav">+ Dodaj</button>
+          <button className="buttonNav" onClick={handleNewElemenet}>
+            + Dodaj
+          </button>
         </nav>
+        {modalNewOpener && (
+          <>
+            {table === "workshops" && (
+              <ModalNewWorkshop
+                setWorkshop={setWorkshop}
+                setModalNewOpener={setModalNewOpener}
+              />
+            )}
+            {table === "organizations" && (
+              <ModalNewOrganization
+                setOrganization={setOrganization}
+                setModalNewOpener={setModalNewOpener}
+              />
+            )}
+            {table === "lecturers" && (
+              <ModalNewLecturer
+                setLecturer={setLecturer}
+                setModalNewOpener={setModalNewOpener}
+                lecturer={[]}
+              />
+            )}
+          </>
+        )}
       </div>
       <div>
         {table === "workshops"
@@ -55,7 +102,14 @@ export const Administration = () => {
               <AdminOrgEl key={org.id} organization={org} />
             ))
           : table === "lecturers"
-          ? lecturer.map((lc) => <AdminLcEl key={lc.id} lecturer={lc} />)
+          ? lecturer.map((lc) => (
+              <AdminLcEl
+                key={lc.id}
+                lecturer={lc}
+                modalDeleteOpener={modalDeleteOpener}
+                setModalDeleteOpener={setModalDeleteOpener}
+              />
+            ))
           : null}
       </div>
     </div>
