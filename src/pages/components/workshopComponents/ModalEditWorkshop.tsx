@@ -75,11 +75,11 @@ function ModalEditWorkshop({
   }, []);
 
   const replaceWorkshop = () => {
-    return workshops.map((wk) => {
-      if (wk.id === formData.id) {
+    return workshops.map((ws) => {
+      if (ws.id === formData.id) {
         return formData;
       }
-      return wk;
+      return ws;
     });
   };
 
