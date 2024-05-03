@@ -2,13 +2,19 @@ import { useState } from "react";
 import { ILecturers } from "../../../interface";
 import "./LecturersEl.css";
 import ModalEditLecturer from "./ModalEditLecturer";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function LecturersEl({ lecturer }: { lecturer: ILecturers }) {
   const [modalEditOpener, setModalEditOpener] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleModalEditOpener = () => {
     setModalEditOpener(!modalEditOpener);
+  };
+
+  const handleSearch = () => {
+    navigate(`/radionice?q=${lecturer.name}`);
   };
 
   return (
@@ -34,7 +40,7 @@ function LecturersEl({ lecturer }: { lecturer: ILecturers }) {
         <div className="buttonsContanier">
           <button
             className="viewWorkshopsButton"
-            onClick={() => redirect(`/predavaci/${lecturer.id}`)}
+            onClick={() => handleSearch()}
           >
             Pregledaj radionice
           </button>

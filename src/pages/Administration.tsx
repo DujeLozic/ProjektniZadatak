@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { ILecturers, IOrganizationts, IWorkshops } from "../interface";
-import AdminWsEl from "./components/AdminitrationComponents/AdminWsEl";
-import AdminLcEl from "./components/AdminitrationComponents/AdminLcEl";
-import AdminOrgEl from "./components/AdminitrationComponents/AdminOrgEl";
+import AdminWsEl from "./components/AdministrationComponents/AdminWsEl";
+import AdminLcEl from "./components/AdministrationComponents/AdminLcEl";
+import AdminOrgEl from "./components/AdministrationComponents/AdminOrgEl";
 import "./Administration.css";
 import ModalNewWorkshop from "./components/workshopComponents/ModalNewWorkshop";
 import ModalNewLecturer from "./components/LecturersComponents/ModalNewLecturer";
-import ModalNewOrganization from "./components/AdminitrationComponents/ModalNewOrganization";
+import ModalNewOrganization from "./components/AdministrationComponents/ModalNewOrganization";
 
 export const Administration = () => {
   const [workshop, setWorkshop] = useState<IWorkshops[]>([]);
@@ -15,7 +15,6 @@ export const Administration = () => {
   const [organization, setOrganization] = useState<IOrganizationts[]>([]);
   const [table, setTable] = useState("workshops");
   const [modalNewOpener, setModalNewOpener] = useState(false);
-  const [modalDeleteOpener, setModalDeleteOpener] = useState(false);
 
   useEffect(() => {
     Promise.all([
@@ -37,10 +36,6 @@ export const Administration = () => {
 
   const handleModalNewOpener = () => {
     setModalNewOpener(!modalNewOpener);
-  };
-
-  const handleModalDeleteOpener = () => {
-    setModalDeleteOpener(!modalDeleteOpener);
   };
 
   const handleNewElemenet = () => {
@@ -88,7 +83,6 @@ export const Administration = () => {
               <ModalNewLecturer
                 setLecturer={setLecturer}
                 setModalNewOpener={setModalNewOpener}
-                lecturer={[]}
               />
             )}
           </>
@@ -102,14 +96,7 @@ export const Administration = () => {
               <AdminOrgEl key={org.id} organization={org} />
             ))
           : table === "lecturers"
-          ? lecturer.map((lc) => (
-              <AdminLcEl
-                key={lc.id}
-                lecturer={lc}
-                modalDeleteOpener={modalDeleteOpener}
-                setModalDeleteOpener={setModalDeleteOpener}
-              />
-            ))
+          ? lecturer.map((lc) => <AdminLcEl lecturer={lc} />)
           : null}
       </div>
     </div>

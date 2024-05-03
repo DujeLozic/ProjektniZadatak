@@ -29,3 +29,11 @@
   border: solid 1px rgb(224, 224, 224);
   border-radius: 4px;
 }
+
+.modalFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}

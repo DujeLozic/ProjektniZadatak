@@ -7,7 +7,6 @@ export interface IWorkshops {
   theme: string;
   difficulty: string;
   number_of_aplications: number;
-  img: string;
 }
 
 export interface ILecturers {
@@ -36,8 +35,9 @@ export interface IThemes {
 }
 
 export interface IApplicants {
-  id: number;
+  id: string;
   name: string;
   email: string;
   reason: string;
+  workshop: string;
 }

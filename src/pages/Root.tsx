@@ -1,31 +1,53 @@
 import { Link, Outlet } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import "./Root.css";
+import { useState } from "react";
+import UserContext from "./UserContext";
 
 export const Root = () => {
+  const [user, setUser] = useState("Admin");
+
+  const handleClick = () => {
+    if (user === "Admin") {
+      setUser("User");
+    } else {
+      setUser("Admin");
+    }
+  };
+
   return (
-    <>
-      <nav>
-        <Link to="/">
-          <img
-            className="logoNav"
-            src="./src/assets/juniorDev.png"
-            alt="junior dev logo"
-          />
-        </Link>
+    <UserContext.Provider value={user}>
+      <header>
+        <nav>
+          <Link to="/">
+            <img
+              className="logoNav"
+              src="./src/assets/juniorDev.png"
+              alt="junior dev logo"
+            />
+          </Link>
 
-        <Link className="navLink" to="/radionice">
-          Radionice
-        </Link>
-        <Link className="navLink" to="/predavaci">
-          Predavaci
-        </Link>
-        <Link className="navLink" to="/administracija">
-          Administracija
-        </Link>
-      </nav>
+          <Link className="navLink" to="/radionice">
+            Radionice
+          </Link>
+          <Link className="navLink" to="/predavaci">
+            Predavaci
+          </Link>
+          <Link className="navLink" to="/administracija">
+            Administracija
+          </Link>
+          <div className="switchContainer">
+            <label className="switch" onClick={handleClick}>
+              <input type="checkbox" />
+              <span className="sliderRound"></span>
+            </label>
+          </div>
 
-      <div className="line"></div>
+          <strong></strong>
+        </nav>
+        <div className="line"></div>
+      </header>
+
       <main>
         <Outlet />
       </main>
@@ -83,6 +105,6 @@ export const Root = () => {
           </p>
         </div>
       </footer>
-    </>
+    </UserContext.Provider>
   );
 };

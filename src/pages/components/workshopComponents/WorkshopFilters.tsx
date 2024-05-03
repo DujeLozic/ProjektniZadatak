@@ -27,6 +27,8 @@ function WorkshopsFilters({
     setModalNewOpener(!modalNewOpener);
   };
 
+  const params = new URLSearchParams(window.location.search);
+
   return (
     <>
       <div className="workshopButtonContanier">
@@ -122,11 +124,36 @@ function WorkshopsFilters({
         </div>
         <div className="workshops">
           {workshop.map((ws) => {
-            if (
+            if (params.get("q")) {
+              if (
+                params.get("q") === ws.lecturer &&
+                (filterTheme === "All" || filterTheme === ws.theme) &&
+                (filterDifficulty === "All" ||
+                  filterDifficulty === ws.difficulty)
+              ) {
+                return (
+                  <WorkshopEl
+                    key={ws.id}
+                    workshop={ws}
+                    setWorkshop={setWorkshop}
+                    workshops={workshop}
+                  />
+                );
+              } else {
+                return null;
+              }
+            } else if (
               (filterTheme === "All" || filterTheme === ws.theme) &&
               (filterDifficulty === "All" || filterDifficulty === ws.difficulty)
             ) {
-              return <WorkshopEl key={ws.id} workshop={ws} />;
+              return (
+                <WorkshopEl
+                  key={ws.id}
+                  workshop={ws}
+                  setWorkshop={setWorkshop}
+                  workshops={workshop}
+                />
+              );
             } else {
               return null;
             }

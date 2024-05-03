@@ -4,9 +4,18 @@ import "./WorkshopEl.css";
 import ModalSubmitApplication from "./ModalSubmitApplication";
 import ModalEditWorkshop from "./ModalEditWorkshop";
 
-function WorkshopEl({ workshop }: { workshop: IWorkshops }) {
+function WorkshopEl({
+  workshop,
+  setWorkshop,
+  workshops,
+}: {
+  workshop: IWorkshops;
+  setWorkshop: React.Dispatch<React.SetStateAction<IWorkshops[]>>;
+  workshops: IWorkshops[];
+}) {
   const [modalSubmitOpener, setModalSubmitOpener] = useState(false);
   const [modalEditOpener, setModalEditOpener] = useState(false);
+  // const user = userContext();
 
   const handleModalSubmitOpener = () => {
     setModalSubmitOpener(!modalSubmitOpener);
@@ -42,6 +51,9 @@ function WorkshopEl({ workshop }: { workshop: IWorkshops }) {
           workshopName={workshop.name}
         />
       )}
+      {/* {user === "Admin" && (<button className="editButton" onClick={handleModalEditOpener}>
+        Uredi
+      </button>)} */}
       <button className="editButton" onClick={handleModalEditOpener}>
         Uredi
       </button>
@@ -50,6 +62,8 @@ function WorkshopEl({ workshop }: { workshop: IWorkshops }) {
           workshop={workshop}
           workshopId={workshop.id}
           setModalEditOpener={setModalEditOpener}
+          setWorkshop={setWorkshop}
+          workshops={workshops}
         />
       )}
     </div>
@@ -57,3 +71,6 @@ function WorkshopEl({ workshop }: { workshop: IWorkshops }) {
 }
 
 export default WorkshopEl;
+function userContext() {
+  throw new Error("Function not implemented.");
+}

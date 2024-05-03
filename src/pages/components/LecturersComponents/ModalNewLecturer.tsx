@@ -17,11 +17,9 @@ interface Option {
 }
 
 function ModalNewLecturer({
-  lecturer,
   setLecturer,
   setModalNewOpener,
 }: {
-  lecturer: ILecturers[];
   setLecturer: React.Dispatch<React.SetStateAction<ILecturers[]>>;
   setModalNewOpener: (arg0: boolean) => void;
 }) {
@@ -70,8 +68,9 @@ function ModalNewLecturer({
     axios
       .post("http://localhost:3001/lecturers", formData)
       .then((res) => {
-        setLecturer(() => [...lecturer, res.data]);
+        setLecturer((lecturer) => [...lecturer, res.data]);
         setModalNewOpener(false);
+        console.log(res.data);
       })
       .catch((err) => console.log(err.message));
   };

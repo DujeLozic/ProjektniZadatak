@@ -4,7 +4,6 @@ import "./ModalSubmitApplication.css";
 import axios from "axios";
 
 interface InputForm {
-  id: number;
   name: string;
   email: string;
   reason: string;
@@ -24,7 +23,6 @@ function ModalSubmitApplication({
 }) {
   const [applicants, setApplicants] = useState<IApplicants[]>([]);
   const [formData, setFormData] = useState<InputForm>({
-    id: 0,
     name: "",
     email: "",
     reason: "",
@@ -54,7 +52,6 @@ function ModalSubmitApplication({
       .then((resFormData) => {
         setApplicants((prevFormData) => ({
           ...prevFormData,
-          id: prevFormData.length + 1,
           name: resFormData.data.name,
           email: resFormData.data.email,
           reason: resFormData.data.reason,
@@ -116,7 +113,6 @@ function ModalSubmitApplication({
                   setFormData({
                     ...formData,
                     name: e.target.value,
-                    id: applicants.length,
                     workshop: workshopName,
                   })
                 }

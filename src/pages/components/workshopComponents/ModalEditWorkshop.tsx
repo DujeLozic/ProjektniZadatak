@@ -17,17 +17,20 @@ interface InputForm {
   theme: string;
   difficulty: string;
   number_of_aplications: number;
-  img: string;
 }
 
 function ModalEditWorkshop({
   workshop,
   workshopId,
   setModalEditOpener,
+  setWorkshop,
+  workshops,
 }: {
   workshop: IWorkshops;
   workshopId: string;
   setModalEditOpener: (arg0: boolean) => void;
+  setWorkshop: React.Dispatch<React.SetStateAction<IWorkshops[]>>;
+  workshops: IWorkshops[];
 }) {
   const [formData, setFormData] = useState<InputForm>({
     id: "",
@@ -38,7 +41,6 @@ function ModalEditWorkshop({
     theme: "",
     difficulty: "",
     number_of_aplications: 0,
-    img: "",
   });
 
   const [lecturers, setLecturers] = useState<ILecturers[]>([]);
@@ -63,7 +65,6 @@ function ModalEditWorkshop({
           theme: resFormData.data.theme,
           difficulty: resFormData.data.difficulty,
           number_of_aplications: resFormData.data.number_of_aplications,
-          img: resFormData.data.img,
         }));
 
         setLecturers(resLecturers.data);
@@ -73,12 +74,22 @@ function ModalEditWorkshop({
       .catch((err) => console.log(err.message));
   }, []);
 
+  const replaceWorkshop = () => {
+    return workshops.map((wk) => {
+      if (wk.id === formData.id) {
+        return formData;
+      }
+      return wk;
+    });
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     axios
       .put(`http://localhost:3001/workshops/${workshopId}`, formData)
       .then(() => {
+        setWorkshop(replaceWorkshop());
         setModalEditOpener(false);
       })
       .catch((err) => console.log(err.message));

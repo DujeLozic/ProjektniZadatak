@@ -10,7 +10,7 @@ function ModalDeleteElement({
   const deleteElement = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     axios
-      .delete(`http://localhost:3001/lecturers/${lecturerId}`)
+      .delete(`http://localhost:3001${lecturerId}`)
       .then(() => {})
       .catch((error) => {
         console.error("Error deleting lecturer:", error);

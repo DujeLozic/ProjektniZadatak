@@ -9,7 +9,6 @@ import axios from "axios";
 import "./ModalEditWorkshop.css";
 
 interface InputForm {
-  id: string;
   name: string;
   date: string;
   lecturer: string;
@@ -27,7 +26,6 @@ function ModalNewWorkshop({
   setModalNewOpener: (arg0: boolean) => void;
 }) {
   const [formData, setFormData] = useState<InputForm>({
-    id: "",
     name: "",
     date: "",
     lecturer: "",
@@ -43,24 +41,11 @@ function ModalNewWorkshop({
 
   useEffect(() => {
     Promise.all([
-      axios.get<IWorkshops>(`http://localhost:3001/workshops/`),
       axios.get<ILecturers[]>("http://localhost:3001/lecturers"),
       axios.get<IDifficultys[]>("http://localhost:3001/difficultys"),
       axios.get<IThemes[]>("http://localhost:3001/themes"),
     ])
-      .then(([resFormData, resLecturers, resDifficultys, resThemes]) => {
-        setFormData((prevFormData) => ({
-          ...prevFormData,
-          id: resFormData.data.id,
-          name: resFormData.data.name,
-          date: resFormData.data.date,
-          lecturer: resFormData.data.lecturer,
-          description: resFormData.data.description,
-          theme: resFormData.data.theme,
-          difficulty: resFormData.data.difficulty,
-          number_of_aplications: 0,
-        }));
-
+      .then(([resLecturers, resDifficultys, resThemes]) => {
         setLecturers(resLecturers.data);
         setDifficultys(resDifficultys.data);
         setThemes(resThemes.data);

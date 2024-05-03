@@ -150,22 +150,24 @@ function ModalEditLecturer({
               ))}
             </select>
           </div>
-          <div className="modalInputElements">
-            <label htmlFor="ThemesLec">Teme: </label>
-            <Select
-              className="multiSelect"
-              id="ThemesLec"
-              options={mapValuesToOptions(themes)}
-              value={selectedOptions}
-              onChange={onChangeTheme}
-              isMulti={true}
-              required
-            />
-          </div>
+          <div className="modalFooter">
+            <div className="modalInputElements">
+              <label htmlFor="ThemesLec">Teme: </label>
+              <Select
+                className="multiSelect"
+                id="ThemesLec"
+                options={mapValuesToOptions(themes)}
+                value={selectedOptions}
+                onChange={onChangeTheme}
+                isMulti={true}
+                required
+              />
+            </div>
 
-          <button type="submit" className="submitModalButton">
-            Spremi
-          </button>
+            <button type="submit" className="submitModalButton">
+              Spremi
+            </button>
+          </div>
         </div>
       </form>
     </div>
