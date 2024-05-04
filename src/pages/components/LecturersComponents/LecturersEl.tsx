@@ -4,13 +4,21 @@ import "./LecturersEl.css";
 import ModalEditLecturer from "./ModalEditLecturer";
 import { useNavigate } from "react-router-dom";
 
-function LecturersEl({ lecturer }: { lecturer: ILecturers }) {
+function LecturersEl({
+  lecturer,
+  setLecturer,
+  lecturers,
+}: {
+  lecturer: ILecturers;
+  setLecturer: React.Dispatch<React.SetStateAction<ILecturers[]>>;
+  lecturers: ILecturers[];
+}) {
   const [modalEditOpener, setModalEditOpener] = useState(false);
 
   const navigate = useNavigate();
 
-  const handleModalEditOpener = () => {
-    setModalEditOpener(!modalEditOpener);
+  const handleModalEditOpener = (e: boolean) => {
+    setModalEditOpener(e);
   };
 
   const handleSearch = () => {
@@ -34,29 +42,33 @@ function LecturersEl({ lecturer }: { lecturer: ILecturers }) {
         <p className="lecturerOrganization">
           Organizacija: {lecturer.organization}
         </p>
-        <p className="lecturerThemes">
-          Teme: {lecturer.themes.map((theme) => theme.name).join(", ")}
-        </p>
-        <div className="buttonsContanier">
-          <button
-            className="viewWorkshopsButton"
-            onClick={() => handleSearch()}
-          >
-            Pregledaj radionice
-          </button>
-          <button
-            className="editLecturerButton"
-            onClick={handleModalEditOpener}
-          >
-            Uredi
-          </button>
-          {modalEditOpener && (
-            <ModalEditLecturer
-              lecturer={lecturer}
-              lecturerId={lecturer.id}
-              setModalEditOpener={setModalEditOpener}
-            />
-          )}
+        <div className="lecturerFooter">
+          <p className="lecturerThemes">
+            Teme: {lecturer.themes.map((theme) => theme.name).join(", ")}
+          </p>
+          <div className="buttonsContanier">
+            <button
+              className="viewWorkshopsButton"
+              onClick={() => handleSearch()}
+            >
+              Pregledaj radionice
+            </button>
+            <button
+              className="editLecturerButton"
+              onClick={() => handleModalEditOpener(true)}
+            >
+              Uredi
+            </button>
+            {modalEditOpener && (
+              <ModalEditLecturer
+                lecturer={lecturer}
+                lecturerId={lecturer.id}
+                handleModalEditOpener={handleModalEditOpener}
+                setLecturer={setLecturer}
+                lecturers={lecturers}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>

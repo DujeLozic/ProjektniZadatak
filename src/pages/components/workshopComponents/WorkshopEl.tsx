@@ -17,12 +17,12 @@ function WorkshopEl({
   const [modalEditOpener, setModalEditOpener] = useState(false);
   // const user = userContext();
 
-  const handleModalSubmitOpener = () => {
-    setModalSubmitOpener(!modalSubmitOpener);
+  const handleModalSubmitOpener = (e: boolean) => {
+    setModalSubmitOpener(e);
   };
 
-  const handleModalEditOpener = () => {
-    setModalEditOpener(!modalEditOpener);
+  const handleModalEditOpener = (e: boolean) => {
+    setModalEditOpener(e);
   };
 
   return (
@@ -40,28 +40,34 @@ function WorkshopEl({
         </div>
       </div>
       <p className="workshopDescription">Opis: {workshop.description}</p>
-      <button className="submitButton" onClick={handleModalSubmitOpener}>
+      <button
+        className="submitButton"
+        onClick={() => handleModalSubmitOpener(true)}
+      >
         Prijavi se
       </button>
       {modalSubmitOpener && (
         <ModalSubmitApplication
           workshop={workshop}
           workshopId={workshop.id}
-          setModalSubmitOpener={setModalSubmitOpener}
+          handleModalSubmitOpener={handleModalSubmitOpener}
           workshopName={workshop.name}
         />
       )}
       {/* {user === "Admin" && (<button className="editButton" onClick={handleModalEditOpener}>
         Uredi
       </button>)} */}
-      <button className="editButton" onClick={handleModalEditOpener}>
+      <button
+        className="editButton"
+        onClick={() => handleModalEditOpener(true)}
+      >
         Uredi
       </button>
       {modalEditOpener && (
         <ModalEditWorkshop
           workshop={workshop}
           workshopId={workshop.id}
-          setModalEditOpener={setModalEditOpener}
+          handleModalEditOpener={setModalEditOpener}
           setWorkshop={setWorkshop}
           workshops={workshops}
         />
@@ -71,6 +77,3 @@ function WorkshopEl({
 }
 
 export default WorkshopEl;
-function userContext() {
-  throw new Error("Function not implemented.");
-}

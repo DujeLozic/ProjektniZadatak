@@ -4,7 +4,6 @@ import axios from "axios";
 import Select, { OptionsOrGroups } from "react-select";
 
 interface InputForm {
-  id: string;
   name: string;
   bio: string;
   organization: string;
@@ -18,13 +17,12 @@ interface Option {
 
 function ModalNewLecturer({
   setLecturer,
-  setModalNewOpener,
+  handleModalNewOpener,
 }: {
   setLecturer: React.Dispatch<React.SetStateAction<ILecturers[]>>;
-  setModalNewOpener: (arg0: boolean) => void;
+  handleModalNewOpener: (arg0: boolean) => void;
 }) {
   const [formData, setFormData] = useState<InputForm>({
-    id: "",
     name: "",
     bio: "",
     organization: "",
@@ -43,19 +41,10 @@ function ModalNewLecturer({
 
   useEffect(() => {
     Promise.all([
-      axios.get<ILecturers>("http://localhost:3001/lecturers/"),
       axios.get<IThemes[]>("http://localhost:3001/themes"),
-      axios.get<IOrganizationts[]>("http://localhost:3001/organization"),
+      axios.get<IOrganizationts[]>("http://localhost:3001/organizations"),
     ])
-      .then(([resFormData, resThemes, resOrganizations]) => {
-        setFormData((prevFormData) => ({
-          ...prevFormData,
-          id: resFormData.data.id,
-          name: resFormData.data.name,
-          bio: resFormData.data.bio,
-          organization: resFormData.data.organization,
-          themes: resFormData.data.themes,
-        }));
+      .then(([resThemes, resOrganizations]) => {
         setThemes(resThemes.data);
         setOrganizations(resOrganizations.data);
       })
@@ -69,8 +58,7 @@ function ModalNewLecturer({
       .post("http://localhost:3001/lecturers", formData)
       .then((res) => {
         setLecturer((lecturer) => [...lecturer, res.data]);
-        setModalNewOpener(false);
-        console.log(res.data);
+        handleModalNewOpener(false);
       })
       .catch((err) => console.log(err.message));
   };
@@ -83,7 +71,6 @@ function ModalNewLecturer({
 
   const onChangeTheme = (option: readonly Option[]) => {
     setSelectedOptions(option);
-    console.log(option);
     setFormData({
       ...formData,
       themes: mapOptionsToValues(option),
@@ -95,13 +82,13 @@ function ModalNewLecturer({
       className="modalContainer"
       onClick={(e) => {
         if ((e.target as HTMLElement).className === "modalContainer") {
-          setModalNewOpener(false);
+          handleModalNewOpener(false);
         }
       }}
     >
       <form onSubmit={handleSubmit}>
         <div className="modal">
-          <div className="close" onClick={() => setModalNewOpener(false)}>
+          <div className="close" onClick={() => handleModalNewOpener(false)}>
             <p>x</p>
           </div>
           <div className="modalHeader">Dodaj novog predavača</div>
@@ -148,22 +135,24 @@ function ModalNewLecturer({
               ))}
             </select>
           </div>
-          <div className="modalInputElements">
-            <label htmlFor="ThemesLec">Teme: </label>
-            <Select
-              className="multiSelect"
-              id="ThemesLec"
-              options={mapValuesToOptions(themes)}
-              value={selectedOptions}
-              onChange={onChangeTheme}
-              isMulti={true}
-              required
-            />
-          </div>
+          <div className="modalFooter">
+            <div className="modalInputElements">
+              <label htmlFor="ThemesLec">Teme: </label>
+              <Select
+                className="multiSelect"
+                id="ThemesLec"
+                options={mapValuesToOptions(themes)}
+                value={selectedOptions}
+                onChange={onChangeTheme}
+                isMulti={true}
+                required
+              />
+            </div>
 
-          <button type="submit" className="submitModalButton">
-            Spremi
-          </button>
+            <button type="submit" className="submitModalButton">
+              Spremi
+            </button>
+          </div>
         </div>
       </form>
     </div>

@@ -8,17 +8,18 @@ interface InputForm {
   email: string;
   reason: string;
   workshop: string;
+  workshopId: string;
 }
 
 function ModalSubmitApplication({
   workshop,
   workshopId,
-  setModalSubmitOpener,
+  handleModalSubmitOpener,
   workshopName,
 }: {
   workshop: IWorkshops;
   workshopId: string;
-  setModalSubmitOpener: (arg0: boolean) => void;
+  handleModalSubmitOpener: (arg0: boolean) => void;
   workshopName: string;
 }) {
   const [applicants, setApplicants] = useState<IApplicants[]>([]);
@@ -27,18 +28,19 @@ function ModalSubmitApplication({
     email: "",
     reason: "",
     workshop: "",
+    workshopId: "",
   });
   const [modalSubmitted, setModalSubmitted] = useState(false);
 
-  const handleModalSubmitted = () => {
-    setModalSubmitted(!modalSubmitted);
+  const handleModalSubmitted = (e: boolean) => {
+    setModalSubmitted(e);
   };
 
   const increaseApplicants = (e: any) => {
     e.preventDefault();
     axios
       .patch(`http://localhost:3001/workshops/${workshopId}`, {
-        number_of_aplications: workshop.number_of_aplications + 1,
+        number_of_applications: workshop.number_of_applications + 1,
       })
 
       .catch((err) => console.log(err.message));
@@ -47,23 +49,15 @@ function ModalSubmitApplication({
   const sendData = (e: any) => {
     e.preventDefault();
 
-    axios
-      .post("http://localhost:3001/applicants", formData)
-      .then((resFormData) => {
-        setApplicants((prevFormData) => ({
-          ...prevFormData,
-          name: resFormData.data.name,
-          email: resFormData.data.email,
-          reason: resFormData.data.reason,
-          workshop: resFormData.data.workshop,
-        }));
-      });
+    axios.post("http://localhost:3001/applicants", formData).then((res) => {
+      setApplicants((applicants) => [...applicants, res.data]);
+    });
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     sendData(e);
     increaseApplicants(e);
-    handleModalSubmitted();
+    handleModalSubmitted(true);
   };
 
   return (
@@ -71,13 +65,13 @@ function ModalSubmitApplication({
       className="modalContainer"
       onClick={(e) => {
         if ((e.target as HTMLElement).className === "modalContainer") {
-          setModalSubmitOpener(false);
+          handleModalSubmitOpener(false);
         }
       }}
     >
       {modalSubmitted ? (
         <div className="modal">
-          <div className="close" onClick={() => setModalSubmitOpener(false)}>
+          <div className="close" onClick={() => handleModalSubmitOpener(false)}>
             <p>x</p>
           </div>
           <div className="modalThankYouNote">
@@ -88,7 +82,7 @@ function ModalSubmitApplication({
           </div>
           <button
             className="submitModalButton"
-            onClick={() => setModalSubmitOpener(false)}
+            onClick={() => handleModalSubmitOpener(false)}
           >
             Natrag u radionice
           </button>
@@ -96,7 +90,10 @@ function ModalSubmitApplication({
       ) : (
         <form onSubmit={handleSubmit}>
           <div className="modal">
-            <div className="close" onClick={() => setModalSubmitOpener(false)}>
+            <div
+              className="close"
+              onClick={() => handleModalSubmitOpener(false)}
+            >
               <p>x</p>
             </div>
             <div className="modalHeader">
@@ -114,6 +111,7 @@ function ModalSubmitApplication({
                     ...formData,
                     name: e.target.value,
                     workshop: workshopName,
+                    workshopId: workshop.id,
                   })
                 }
                 required

@@ -4,13 +4,26 @@ import "./AdminEl.css";
 import ModalEditLecturer from "../LecturersComponents/ModalEditLecturer";
 import ModalDeleteElement from "./ModalDeleteElement";
 
-function AdminWsEl({ lecturer }: { lecturer: ILecturers }) {
+function AdminWsEl({
+  lecturer,
+  setLecturer,
+  lecturers,
+}: {
+  lecturer: ILecturers;
+  setLecturer: React.Dispatch<React.SetStateAction<ILecturers[]>>;
+  lecturers: ILecturers[];
+}) {
   const [modalEditOpener, setModalEditOpener] = useState(false);
   const [modalDeleteOpener, setModalDeleteOpener] = useState(false);
 
-  const handleModalEditOpener = () => {
-    setModalEditOpener(!modalEditOpener);
+  const handleModalEditOpener = (e: boolean) => {
+    setModalEditOpener(e);
   };
+
+  const handleModalDeleteOpener = (e: boolean) => {
+    setModalDeleteOpener(e);
+  };
+
   return (
     <div className="listElement">
       <div>
@@ -24,7 +37,7 @@ function AdminWsEl({ lecturer }: { lecturer: ILecturers }) {
       <div className="listButtons">
         <button
           className="listEditButton"
-          onClick={() => setModalEditOpener(true)}
+          onClick={() => handleModalEditOpener(true)}
         >
           Uredi
         </button>
@@ -32,20 +45,26 @@ function AdminWsEl({ lecturer }: { lecturer: ILecturers }) {
           <ModalEditLecturer
             lecturer={lecturer}
             lecturerId={lecturer.id}
-            setModalEditOpener={setModalEditOpener}
+            handleModalEditOpener={handleModalEditOpener}
+            setLecturer={setLecturer}
+            lecturers={lecturers}
           />
         )}
         <button
           className="listDeleteButton"
-          onClick={() => setModalDeleteOpener(true)}
+          onClick={() => handleModalDeleteOpener(true)}
         >
           Izbriši
         </button>
         {modalDeleteOpener && (
           <ModalDeleteElement
             key={lecturer.id}
-            setModalDeleteOpener={setModalDeleteOpener}
-            lecturerId={`/lecturers/${lecturer.id}`}
+            handleModalDeleteOpener={handleModalDeleteOpener}
+            lecturerLink={`/lecturers/${lecturer.id}`}
+            lecturerId={lecturer.id}
+            lecturerName={`predavača ${lecturer.name}`}
+            setLecturer={setLecturer}
+            lecturers={lecturers}
           />
         )}
       </div>

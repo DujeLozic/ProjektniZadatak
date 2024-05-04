@@ -1,194 +1,36 @@
 {
   "workshops": [
     {
-      "id": "radionica_1",
-      "name": "Bruno",
-      "date": "1.1.2025",
-      "lecturer": "Ivana Ivančić",
-      "description": "radi za mid plac",
-      "theme": "Next.js",
-      "difficulty": "Junior",
-      "number_of_aplications": 27
-    },
-    {
-      "id": "radionica_2",
-      "name": "smeče",
-      "date": "06.06.2025",
-      "lecturer": "Predavac 1",
-      "description": "smeče veliko od radionice",
-      "theme": "Node.js",
-      "difficulty": "Senior",
-      "number_of_aplications": 5,
-      "img": "src/assets/React.png"
-    },
-    {
-      "id": "radionica_3",
-      "name": "Radionica 3",
-      "date": "01.01.2025",
-      "lecturer": "Predavac 1",
-      "description": "Kratki opis radionice 3",
-      "theme": "Next.js",
-      "difficulty": "Mid",
-      "number_of_aplications": 0,
-      "img": "src/assets/NextJS.png"
-    },
-    {
-      "id": "radionica_4",
-      "name": "Bruncek",
-      "date": "1.1.2025",
-      "lecturer": "Predavac 2",
-      "description": "radi za mid placu",
-      "theme": "React",
-      "difficulty": "Senior",
-      "number_of_aplications": 8,
-      "img": ""
-    },
-    {
-      "id": "radionica_5",
-      "name": "smeče",
-      "date": "06.06.2025",
-      "lecturer": "Predavac 1",
-      "description": "smeče veliko od radionice",
-      "theme": "Node.js",
-      "difficulty": "Senior",
-      "number_of_aplications": 2,
-      "img": "src/assets/React.png"
-    },
-    {
-      "id": "9655",
-      "name": "smeče222",
-      "date": "1.1.1999",
+      "id": "3579",
+      "name": "123",
+      "date": "1.1.2000",
       "lecturer": "Petra Petrić",
-      "description": "asdasd1s da da2e 2",
+      "description": "123",
       "theme": "Express",
       "difficulty": "Mid",
-      "number_of_aplications": 1
+      "number_of_applications": 5
     },
     {
-      "id": "3f50",
-      "name": "aasdasd",
+      "id": "41b9",
+      "name": "asd",
       "date": "1.1.2025",
-      "lecturer": "Petra Petrić",
-      "description": "asdasd",
-      "theme": "React",
-      "difficulty": "Senior",
-      "number_of_aplications": 1
-    },
-    {
-      "id": "4dd2",
-      "name": "asdasdasdad",
-      "date": "1.1.2000",
-      "lecturer": "Petra Petrić",
-      "description": "asdasd",
-      "theme": "Next.js",
-      "difficulty": "Mid",
-      "number_of_aplications": 0
-    },
-    {
-      "id": "f6e3",
-      "name": "ADASDAD",
-      "date": "1.1.2000",
-      "lecturer": "Petra Petrić",
-      "description": "asdad",
-      "theme": "React",
-      "difficulty": "Mid",
-      "number_of_aplications": 0
-    },
-    {
-      "id": "7eee",
-      "name": "AAAAAAA",
-      "date": "1.1.2000",
-      "lecturer": "Ana Anić",
-      "description": "asdasdasas",
-      "theme": "Next.js",
-      "difficulty": "Junior",
-      "number_of_aplications": 0
-    },
-    {
-      "id": "030e",
-      "name": "JOZO SMRDI",
-      "date": "1.1.2000",
-      "lecturer": "asdasdd",
-      "description": "smrad",
-      "theme": "Express",
-      "difficulty": "Senior",
-      "number_of_aplications": 0
-    },
-    {
-      "id": "40ca",
-      "name": "Zuhrica",
-      "date": "1.1.2000",
-      "lecturer": "Ana Anić",
-      "description": "adds",
-      "theme": "React",
-      "difficulty": "Junior",
-      "number_of_aplications": 0
-    },
-    {
-      "id": "d27f",
-      "name": "123123",
-      "date": "1.1.2000",
-      "lecturer": "Ana Anić",
-      "description": "12312",
-      "theme": "React",
-      "difficulty": "Junior",
-      "number_of_aplications": 0
-    },
-    {
-      "id": "25bc",
-      "name": "Zuhrica",
-      "date": "1.1.2000",
-      "lecturer": "Petra Petrić",
+      "lecturer": "Ante Antić",
       "description": "asd",
       "theme": "React",
-      "difficulty": "Junior",
-      "number_of_aplications": 0
-    },
-    {
-      "id": "3f7f",
-      "name": "asdasdasdad",
-      "date": "1.1.2000",
-      "lecturer": "Ivana Ivančić",
-      "description": "asdas",
-      "theme": "Express",
       "difficulty": "Mid",
-      "number_of_aplications": 0
-    },
-    {
-      "id": "",
-      "name": "asdasda",
-      "date": "1.1.2000",
-      "lecturer": "Ivana Ivančić",
-      "description": "asd",
-      "theme": "React",
-      "difficulty": "Junior",
-      "number_of_aplications": 0
-    },
-    {
-      "id": "9305",
-      "name": "asasd",
-      "date": "1.1.2000",
-      "lecturer": "Ivana Ivančić",
-      "description": "asd",
-      "theme": "React",
-      "difficulty": "Junior",
-      "number_of_aplications": 2
+      "number_of_applications": 0
     }
   ],
   "lecturers": [
     {
       "id": "predavac_2",
-      "name": "Petra Perić",
+      "name": "Petra Petrić",
       "bio": "Biografija predavaca 2",
       "organization": "Info Bip",
       "themes": [
         {
           "id": "react",
           "name": "React"
-        },
-        {
-          "id": "node_js",
-          "name": "Node.js"
         }
       ]
     },
@@ -215,96 +57,23 @@
         }
       ],
       "organization": "Locastic"
-    },
-    {
-      "id": "3cf0",
-      "name": "asdasdas",
-      "bio": "asda",
-      "organization": "Digital Dalmacijaa",
-      "themes": [
-        {
-          "id": "react",
-          "name": "React"
-        }
-      ]
-    },
-    {
-      "id": "9637",
-      "name": "Puhra",
-      "bio": "asdasd",
-      "organization": "Locastic",
-      "themes": [
-        {
-          "id": "express",
-          "name": "Express"
-        }
-      ]
-    },
-    {
-      "id": "9931",
-      "name": "asdasdsadsadsadasda",
-      "bio": "asdasdsadasd",
-      "organization": "Info Bip",
-      "themes": [
-        {
-          "id": "react",
-          "name": "React"
-        }
-      ]
-    },
-    {
-      "id": "8de2",
-      "name": "asdas",
-      "bio": "asdas",
-      "organization": "Digital Dalmacijaa",
-      "themes": [
-        {
-          "id": "react",
-          "name": "React"
-        }
-      ]
     }
   ],
-  "organization": [
-    {
-      "id": "organizacija_1",
-      "name": "Digital Dalmacijaa",
-      "description": "Oasdsadas"
-    },
+  "organizations": [
     {
       "id": "organizacija_2",
       "name": "Agilno",
       "description": "Opis organizacije 2"
     },
     {
-      "id": "organizacija_3",
-      "name": "Info Bip",
-      "description": "qweweqweqwqw"
-    },
-    {
       "id": "organizacija_4",
       "name": "Locastic",
-      "description": "Opis organizacije 4"
+      "description": "a"
     },
     {
-      "id": "8c83",
-      "name": "Zuhrica",
-      "description": "asdasdad"
-    },
-    {
-      "id": "aea3",
-      "name": "qweqweqwq",
-      "description": "wqeqeqeq"
-    },
-    {
-      "id": "2379",
-      "name": "smečewefwer2",
-      "description": "242erw2"
-    },
-    {
-      "id": "b8ab",
-      "name": "asdasd",
-      "description": "asdasd"
+      "id": "9e6f",
+      "name": "aaa",
+      "description": "a"
     }
   ],
   "difficultys": [
@@ -341,277 +110,12 @@
   ],
   "applicants": [
     {
-      "id": "0",
-      "name": "asda",
-      "email": "dujelozic@gmail.comasd",
-      "reason": "asdad"
-    },
-    {
-      "id": "0",
-      "name": "asdasd",
-      "email": "marlo@marlo.hr",
-      "reason": "asdasdasdasd"
-    },
-    {
-      "id": "0",
-      "name": "asd",
-      "email": "marlo@st.t-com.hr",
-      "reason": "asdasdasdadasd"
-    },
-    {
-      "id": "0",
-      "name": "asdasd",
-      "email": "dujelozic@gmail.com",
-      "reason": "asdasdasdasasdasasaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-    },
-    {
-      "id": "0",
-      "name": "asdasda",
+      "id": "3a84",
+      "name": "13232",
       "email": "codmaniacdudu@gmail.com",
-      "reason": "11111111111111"
-    },
-    {
-      "id": "0",
-      "name": "asdasdas123123",
-      "email": "marlo@marlo.hr",
-      "reason": "123123dasdd123sad"
-    },
-    {
-      "id": "0",
-      "name": "asdasdasda",
-      "email": "codmaniacdudu@gmail.com",
-      "reason": "asdasdasdasdasd"
-    },
-    {
-      "id": "0",
-      "name": "dasdasas",
-      "email": "dujelozic@gmail.com",
-      "reason": "111111111111111111111111111111"
-    },
-    {
-      "id": "0",
-      "name": "333333333",
-      "email": "11111asda1111@ggg.com",
-      "reason": "aa2135465461321354"
-    },
-    {
-      "id": "0",
-      "name": "asdad",
-      "email": "dujelozic@gmail.com",
-      "reason": "ddd"
-    },
-    {
-      "id": "0",
-      "name": "aaaaaaaa",
-      "email": "marlo@st.t-com.hr",
-      "reason": "aaaaaaaa"
-    },
-    {
-      "id": "0",
-      "name": "asdasd",
-      "email": "dujelozic@gmail.comasdasd",
-      "reason": "asdasdaadaasda"
-    },
-    {
-      "id": "0",
-      "name": "adasd",
-      "email": "dujelozic@gmail.com",
-      "reason": "asdasdasd"
-    },
-    {
-      "id": "0",
-      "name": "asdsda",
-      "email": "codmaniacdudu@gmail.com",
-      "reason": "asdasdadad"
-    },
-    {
-      "id": "0",
-      "name": "asdasd",
-      "email": "codmaniacdudu@gmail.com",
-      "reason": "asdasd"
-    },
-    {
-      "id": "0",
-      "name": "123",
-      "email": "dujelozic@gmail.com",
-      "reason": "123"
-    },
-    {
-      "id": "0",
-      "name": "asdas",
-      "email": "codmaniacdudu@gmail.com",
-      "reason": "asdasdda"
-    },
-    {
-      "id": "0",
-      "name": "jozo",
-      "email": "jozojozic@gmai",
-      "reason": "asdasda"
-    },
-    {
-      "id": "0",
-      "name": "asda",
-      "email": "codmaniacdudu@gmail.com",
-      "reason": "asdasdad"
-    },
-    {
-      "id": "0",
-      "name": "asdasd",
-      "email": "dujelozic@gmail.com",
-      "reason": "asdasds"
-    },
-    {
-      "id": "0",
-      "name": "asdasd",
-      "email": "dujelozic@gmail.com",
-      "reason": "asdadasdasd",
-      "workshop": ""
-    },
-    {
-      "id": "0",
-      "name": "fsdfsd",
-      "email": "dujelozic@gmail.com",
-      "reason": "sdfsdfsdfsdfsdfs",
-      "workshop": ""
-    },
-    {
-      "id": "0",
-      "name": "asdasdasd",
-      "email": "dujelozic@gmail.comasdasd",
-      "reason": "asdsdasds",
-      "workshop": ""
-    },
-    {
-      "id": "0",
-      "name": "adasdasd",
-      "email": "dujelozic@gmail.com",
-      "reason": "asdasdasdasdasds",
-      "workshop": ""
-    },
-    {
-      "id": "0",
-      "name": "asdasdasadaddaadadadadad",
-      "email": "codmaniacdudu@gmail.com",
-      "reason": "asdasdasasadaw1231",
-      "workshop": ""
-    },
-    {
-      "id": "0",
-      "name": "asdasdasa",
-      "email": "asdasdaasd@gggg.com",
-      "reason": "asdasdsd"
-    },
-    {
-      "id": "0",
-      "name": "dassdas",
-      "email": "dujelozic@gmail.com",
-      "reason": "asdasd",
-      "workshop": "Bruncek"
-    },
-    {
-      "id": "0",
-      "name": "asdasdas",
-      "email": "marlo@marlo.hr",
-      "reason": "asdasda",
-      "workshop": "smeče"
-    },
-    {
-      "id": "0",
-      "name": "asdad",
-      "email": "dujelozic@gmail.com",
-      "reason": "asdadssa",
-      "workshop": "Bruncek"
-    },
-    {
-      "id": "0",
-      "name": "asdasd",
-      "email": "dujelozic@gmail.com",
-      "reason": "asdasddad",
-      "workshop": "Bruncek"
-    },
-    {
-      "id": "0",
-      "name": "asdasd",
-      "email": "codmaniacdudu@gmail.com",
-      "reason": "sasd",
-      "workshop": "Bruno"
-    },
-    {
-      "id": "",
-      "name": "asdas",
-      "email": "codmaniacdudu@gmail.com",
-      "reason": "asdasdasd",
-      "workshop": ""
-    },
-    {
-      "id": "",
-      "name": "asdasd",
-      "email": "codmaniacdudu@gmail.com",
-      "reason": "asd",
-      "workshop": ""
-    },
-    {
-      "id": "",
-      "name": "asdasd",
-      "email": "dujelozic@gmail.com",
-      "reason": "asdasd",
-      "workshop": ""
-    },
-    {
-      "id": "",
-      "name": "asdasd",
-      "email": "dujelozic@gmail.com",
-      "reason": "asdasd",
-      "workshop": ""
-    },
-    {
-      "id": "",
-      "name": "asdasdsd",
-      "email": "dujelozic@gmail.comasdas",
-      "reason": "asdsdsad",
-      "workshop": ""
-    },
-    {
-      "id": "37d1",
-      "name": "asdasd",
-      "email": "dujelozic@gmail.com",
-      "reason": "asdasd",
-      "workshop": ""
-    },
-    {
-      "id": "",
-      "name": "asdas",
-      "email": "dujelozic@gmail.com",
-      "reason": "asdas",
-      "workshop": "Bruno"
-    },
-    {
-      "id": "5f22",
-      "name": "asdasd",
-      "email": "dujelozic@gmail.com",
-      "reason": "asdads",
-      "workshop": "Bruno"
-    },
-    {
-      "id": "2058",
-      "name": "asdad",
-      "email": "dujelozic@gmail.com",
-      "reason": "asdas",
-      "workshop": "asasd"
-    },
-    {
-      "id": "4398",
-      "name": "asd",
-      "email": "dujelozic@gmail.comasd",
-      "reason": "asdas",
-      "workshop": "asasd"
-    },
-    {
-      "id": "f8b9",
-      "name": "asdasd",
-      "email": "dujelozic@gmail.comasd",
-      "reason": "asd",
-      "workshop": "asasd"
+      "reason": "12312",
+      "workshop": "123",
+      "workshopId": "3579"
     }
   ]
 }

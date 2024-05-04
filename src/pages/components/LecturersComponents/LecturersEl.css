@@ -41,7 +41,6 @@
 .buttonsContanier {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0px;
 }
 
 .viewWorkshopsButton {
@@ -81,4 +80,10 @@
 .lecturerDesc {
   width: 200px;
   height: 200px;
+}
+
+.lecturerFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

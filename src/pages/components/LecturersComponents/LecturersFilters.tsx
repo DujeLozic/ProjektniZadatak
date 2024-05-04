@@ -23,22 +23,24 @@ function LecturersFilters({
     setFilterOrganization(e.target.value);
   };
 
-  const handleModalNewOpener = () => {
-    setModalNewOpener(!modalNewOpener);
+  const handleModalNewOpener = (e: boolean) => {
+    setModalNewOpener(e);
   };
 
   return (
     <>
       <div className="workshopButtonContanier">
-        <button className="newWorkshopButton" onClick={handleModalNewOpener}>
+        <button
+          className="newWorkshopButton"
+          onClick={() => handleModalNewOpener(true)}
+        >
           Dodaj novu radionicu
         </button>
       </div>
       {modalNewOpener && (
         <ModalNewLecturer
-          lecturer={lecturer}
           setLecturer={setLecturer}
-          setModalNewOpener={setModalNewOpener}
+          handleModalNewOpener={handleModalNewOpener}
         />
       )}
       <div className="workshopsAndFilters">
@@ -141,7 +143,14 @@ function LecturersFilters({
               (filterOrganization === "All" ||
                 filterOrganization === lc.organization)
             ) {
-              return <LecturersEl key={lc.id} lecturer={lc} />;
+              return (
+                <LecturersEl
+                  key={lc.id}
+                  lecturer={lc}
+                  setLecturer={setLecturer}
+                  lecturers={lecturer}
+                />
+              );
             } else {
               return null;
             }

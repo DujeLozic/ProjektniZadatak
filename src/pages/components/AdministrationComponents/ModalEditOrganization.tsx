@@ -13,10 +13,14 @@ function ModalEditOrganization({
   organization,
   organizationId,
   handleModalEditOpener,
+  setOrganization,
+  organizations,
 }: {
   organization: IOrganizationts;
   organizationId: string;
   handleModalEditOpener: (arg0: boolean) => void;
+  setOrganization: React.Dispatch<React.SetStateAction<IOrganizationts[]>>;
+  organizations: IOrganizationts[];
 }) {
   const [formData, setFormData] = useState<InputForm>({
     id: "",
@@ -27,7 +31,7 @@ function ModalEditOrganization({
   useEffect(() => {
     axios
       .get<IOrganizationts>(
-        `http://localhost:3001/organization/${organizationId}`
+        `http://localhost:3001/organizations/${organizationId}`
       )
       .then((resFormData) => {
         setFormData((prevFormData) => ({
@@ -40,12 +44,22 @@ function ModalEditOrganization({
       .catch((err) => console.log(err.message));
   }, []);
 
+  const replaceOrganization = () => {
+    return organizations.map((org) => {
+      if (org.id === formData.id) {
+        return formData;
+      }
+      return org;
+    });
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     axios
-      .put(`http://localhost:3001/organization/${organizationId}`, formData)
+      .put(`http://localhost:3001/organizations/${organizationId}`, formData)
       .then(() => {
+        setOrganization(replaceOrganization());
         handleModalEditOpener(false);
       })
       .catch((err) => console.log(err.message));

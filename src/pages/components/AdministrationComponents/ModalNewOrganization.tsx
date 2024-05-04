@@ -10,10 +10,10 @@ interface InputForm {
 
 function ModalEditOrganization({
   setOrganization,
-  setModalNewOpener,
+  handleModalNewOpener,
 }: {
   setOrganization: React.Dispatch<React.SetStateAction<IOrganizationts[]>>;
-  setModalNewOpener: (arg0: boolean) => void;
+  handleModalNewOpener: (arg0: boolean) => void;
 }) {
   const [formData, setFormData] = useState<InputForm>({
     id: "",
@@ -23,7 +23,7 @@ function ModalEditOrganization({
 
   useEffect(() => {
     axios
-      .get<IOrganizationts>("http://localhost:3001/organization")
+      .get<IOrganizationts>("http://localhost:3001/organizations")
       .then((resFormData) => {
         setFormData((prevFormData) => ({
           ...prevFormData,
@@ -39,10 +39,10 @@ function ModalEditOrganization({
     e.preventDefault();
 
     axios
-      .post("http://localhost:3001/organization", formData)
+      .post("http://localhost:3001/organizations", formData)
       .then((res) => {
         setOrganization((organization) => [...organization, res.data]);
-        setModalNewOpener(false);
+        handleModalNewOpener(false);
       })
       .catch((err) => console.log(err.message));
   };
@@ -52,13 +52,13 @@ function ModalEditOrganization({
       className="modalContainer"
       onClick={(e) => {
         if ((e.target as HTMLElement).className === "modalContainer") {
-          setModalNewOpener(false);
+          handleModalNewOpener(false);
         }
       }}
     >
       <form onSubmit={handleSubmit}>
         <div className="modal">
-          <div className="close" onClick={() => setModalNewOpener(false)}>
+          <div className="close" onClick={() => handleModalNewOpener(false)}>
             <p>x</p>
           </div>
           <div className="modalHeader">Dodaj organizaciju</div>

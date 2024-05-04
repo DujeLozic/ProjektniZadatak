@@ -6,7 +6,7 @@ export interface IWorkshops {
   description: string;
   theme: string;
   difficulty: string;
-  number_of_aplications: number;
+  number_of_applications: number;
 }
 
 export interface ILecturers {
@@ -21,7 +21,6 @@ export interface IOrganizationts {
   id: string;
   name: string;
   description: string;
-  workshop: string;
 }
 
 export interface IDifficultys {
@@ -40,4 +39,5 @@ export interface IApplicants {
   email: string;
   reason: string;
   workshop: string;
+  workshopId: string;
 }

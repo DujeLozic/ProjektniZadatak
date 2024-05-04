@@ -78,3 +78,15 @@
 .listDeleteButton:hover {
   background-color: rgb(255, 106, 73);
 }
+
+.listEmail {
+  display: inline-block;
+  margin-left: 20px;
+  width: 200px;
+}
+
+.listWs {
+  display: inline-block;
+  margin-left: 20px;
+  width: 330px;
+}

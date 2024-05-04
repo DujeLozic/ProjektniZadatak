@@ -16,19 +16,19 @@ interface InputForm {
   description: string;
   theme: string;
   difficulty: string;
-  number_of_aplications: number;
+  number_of_applications: number;
 }
 
 function ModalEditWorkshop({
   workshop,
   workshopId,
-  setModalEditOpener,
+  handleModalEditOpener,
   setWorkshop,
   workshops,
 }: {
   workshop: IWorkshops;
   workshopId: string;
-  setModalEditOpener: (arg0: boolean) => void;
+  handleModalEditOpener: (arg0: boolean) => void;
   setWorkshop: React.Dispatch<React.SetStateAction<IWorkshops[]>>;
   workshops: IWorkshops[];
 }) {
@@ -40,7 +40,7 @@ function ModalEditWorkshop({
     description: "",
     theme: "",
     difficulty: "",
-    number_of_aplications: 0,
+    number_of_applications: 0,
   });
 
   const [lecturers, setLecturers] = useState<ILecturers[]>([]);
@@ -64,7 +64,7 @@ function ModalEditWorkshop({
           description: resFormData.data.description,
           theme: resFormData.data.theme,
           difficulty: resFormData.data.difficulty,
-          number_of_aplications: resFormData.data.number_of_aplications,
+          number_of_aplications: resFormData.data.number_of_applications,
         }));
 
         setLecturers(resLecturers.data);
@@ -90,7 +90,7 @@ function ModalEditWorkshop({
       .put(`http://localhost:3001/workshops/${workshopId}`, formData)
       .then(() => {
         setWorkshop(replaceWorkshop());
-        setModalEditOpener(false);
+        handleModalEditOpener(false);
       })
       .catch((err) => console.log(err.message));
   };
@@ -108,13 +108,13 @@ function ModalEditWorkshop({
       className="modalContainer"
       onClick={(e) => {
         if ((e.target as HTMLElement).className === "modalContainer") {
-          setModalEditOpener(false);
+          handleModalEditOpener(false);
         }
       }}
     >
       <form onSubmit={handleSubmit}>
         <div className="modal">
-          <div className="close" onClick={() => setModalEditOpener(false)}>
+          <div className="close" onClick={() => handleModalEditOpener(false)}>
             <p>x</p>
           </div>
           <div className="modalHeader">Uredi radionicu {workshop.name}</div>
@@ -193,25 +193,26 @@ function ModalEditWorkshop({
               ))}
             </select>
           </div>
-          <div className="modalInputElements">
-            <label htmlFor="ThemeWs">Odabeli temu: </label>
-            <select
-              id="ThemeWs"
-              value={formData.theme}
-              onChange={(e) =>
-                setFormData({ ...formData, theme: e.target.value })
-              }
-              required
-            >
-              <option value="">{workshop.theme}</option>
-              {themes.map((themes) => (
-                <option key={themes.id} value={themes.name}>
-                  {themes.name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
+          <div className="modalFooter">
+            <div className="modalInputElements">
+              <label htmlFor="ThemeWs">Odabeli temu: </label>
+              <select
+                id="ThemeWs"
+                value={formData.theme}
+                onChange={(e) =>
+                  setFormData({ ...formData, theme: e.target.value })
+                }
+                required
+              >
+                <option value="">{workshop.theme}</option>
+                {themes.map((themes) => (
+                  <option key={themes.id} value={themes.name}>
+                    {themes.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
             <button type="submit" className="submitModalButton">
               Spremi
             </button>

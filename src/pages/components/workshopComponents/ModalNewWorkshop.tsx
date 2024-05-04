@@ -15,15 +15,15 @@ interface InputForm {
   description: string;
   theme: string;
   difficulty: string;
-  number_of_aplications: number;
+  number_of_applications: number;
 }
 
 function ModalNewWorkshop({
   setWorkshop,
-  setModalNewOpener,
+  handleModalNewOpener,
 }: {
   setWorkshop: React.Dispatch<React.SetStateAction<IWorkshops[]>>;
-  setModalNewOpener: (arg0: boolean) => void;
+  handleModalNewOpener: (arg0: boolean) => void;
 }) {
   const [formData, setFormData] = useState<InputForm>({
     name: "",
@@ -32,7 +32,7 @@ function ModalNewWorkshop({
     description: "",
     theme: "",
     difficulty: "",
-    number_of_aplications: 0,
+    number_of_applications: 0,
   });
 
   const [lecturers, setLecturers] = useState<ILecturers[]>([]);
@@ -60,7 +60,7 @@ function ModalNewWorkshop({
       .post(`http://localhost:3001/workshops/`, formData)
       .then((res) => {
         setWorkshop((workshop) => [...workshop, res.data]);
-        setModalNewOpener(false);
+        handleModalNewOpener(false);
       })
       .catch((err) => console.log(err.message));
   };
@@ -70,13 +70,13 @@ function ModalNewWorkshop({
       className="modalContainer"
       onClick={(e) => {
         if ((e.target as HTMLElement).className === "modalContainer") {
-          setModalNewOpener(false);
+          handleModalNewOpener(false);
         }
       }}
     >
       <form onSubmit={handleSubmit}>
         <div className="modal">
-          <div className="close" onClick={() => setModalNewOpener(false)}>
+          <div className="close" onClick={() => handleModalNewOpener(false)}>
             <p>x</p>
           </div>
           <div className="modalHeader">Dodaj novu radionicu</div>
@@ -155,25 +155,26 @@ function ModalNewWorkshop({
               ))}
             </select>
           </div>
-          <div className="modalInputElements">
-            <label htmlFor="ThemeWs">Odabeli temu: </label>
-            <select
-              id="ThemeWs"
-              value={formData.theme}
-              onChange={(e) =>
-                setFormData({ ...formData, theme: e.target.value })
-              }
-              required
-            >
-              <option value="">--</option>
-              {themes.map((themes) => (
-                <option key={themes.id} value={themes.name}>
-                  {themes.name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
+          <div className="modalFooter">
+            <div className="modalInputElements">
+              <label htmlFor="ThemeWs">Odabeli temu: </label>
+              <select
+                id="ThemeWs"
+                value={formData.theme}
+                onChange={(e) =>
+                  setFormData({ ...formData, theme: e.target.value })
+                }
+                required
+              >
+                <option value="">--</option>
+                {themes.map((themes) => (
+                  <option key={themes.id} value={themes.name}>
+                    {themes.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
             <button className="submitModalButton" type="submit">
               Dodaj
             </button>

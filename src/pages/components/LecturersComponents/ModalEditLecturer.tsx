@@ -20,11 +20,15 @@ interface Option {
 function ModalEditLecturer({
   lecturer,
   lecturerId,
-  setModalEditOpener,
+  handleModalEditOpener,
+  setLecturer,
+  lecturers,
 }: {
   lecturer: ILecturers;
   lecturerId: string;
-  setModalEditOpener: (arg0: boolean) => void;
+  handleModalEditOpener: (arg0: boolean) => void;
+  setLecturer: React.Dispatch<React.SetStateAction<ILecturers[]>>;
+  lecturers: ILecturers[];
 }) {
   const [formData, setFormData] = useState<InputForm>({
     id: "",
@@ -48,7 +52,7 @@ function ModalEditLecturer({
     Promise.all([
       axios.get<ILecturers>(`http://localhost:3001/lecturers/${lecturerId}`),
       axios.get<IThemes[]>("http://localhost:3001/themes"),
-      axios.get<IOrganizationts[]>("http://localhost:3001/organization"),
+      axios.get<IOrganizationts[]>("http://localhost:3001/organizations"),
     ])
       .then(([resFormData, resThemes, resOrganizations]) => {
         setFormData((prevFormData) => ({
@@ -66,13 +70,23 @@ function ModalEditLecturer({
       .catch((err) => console.log(err.message));
   }, []);
 
+  const replaceLecturer = () => {
+    return lecturers.map((ls) => {
+      if (ls.id === formData.id) {
+        return formData;
+      }
+      return ls;
+    });
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     axios
       .put(`http://localhost:3001/lecturers/${lecturerId}`, formData)
       .then(() => {
-        setModalEditOpener(false);
+        setLecturer(replaceLecturer());
+        handleModalEditOpener(false);
       })
       .catch((err) => console.log(err.message));
   };
@@ -97,13 +111,13 @@ function ModalEditLecturer({
       className="modalContainer"
       onClick={(e) => {
         if ((e.target as HTMLElement).className === "modalContainer") {
-          setModalEditOpener(false);
+          handleModalEditOpener(false);
         }
       }}
     >
       <form onSubmit={handleSubmit}>
         <div className="modal">
-          <div className="close" onClick={() => setModalEditOpener(false)}>
+          <div className="close" onClick={() => handleModalEditOpener(false)}>
             <p>x</p>
           </div>
           <div className="modalHeader">Uredi predavača {lecturer.name}</div>

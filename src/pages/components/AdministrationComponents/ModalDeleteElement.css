@@ -1,0 +1,64 @@
+.withdrawDeleteButton {
+  height: 30px;
+  width: 70px;
+  border: solid 0px;
+  border-radius: 4px;
+  background-color: rgba(0, 127, 171, 255);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.12s;
+  transition: color 0.12s;
+}
+
+.withdrawDeleteButton:hover {
+  background-color: rgb(189, 242, 255);
+  color: rgba(0, 127, 171, 255);
+}
+
+.confirmDeleteButton {
+  height: 30px;
+  width: 70px;
+  border: solid 0px;
+  border-radius: 4px;
+  background-color: rgba(0, 127, 171, 255);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.12s;
+}
+
+.confirmDeleteButton:hover {
+  background-color: rgb(255, 106, 73);
+}
+
+.modalButtonsContainer {
+  width: 250px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.modalContainerDel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.modalDel {
+  color: rgb(95, 95, 95);
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}

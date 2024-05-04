@@ -40,10 +40,20 @@
   color: black;
 }
 
+.appNav {
+  font-size: large;
+  margin-left: 70px;
+  cursor: pointer;
+}
+
+.appNav:hover {
+  color: black;
+}
+
 .buttonNav {
   height: 40px;
   width: 100px;
-  margin-left: 380px;
+  margin-left: 260px;
   border: solid 0px;
   border-radius: 4px;
   background-color: rgb(211, 172, 0);

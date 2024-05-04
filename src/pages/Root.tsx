@@ -1,19 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import "./Root.css";
-import { useState } from "react";
-import UserContext from "./UserContext";
+import { createContext, useState } from "react";
 
 export const Root = () => {
+  const UserContext = createContext("Admin");
   const [user, setUser] = useState("Admin");
-
-  const handleClick = () => {
-    if (user === "Admin") {
-      setUser("User");
-    } else {
-      setUser("Admin");
-    }
-  };
 
   return (
     <UserContext.Provider value={user}>
@@ -33,17 +25,23 @@ export const Root = () => {
           <Link className="navLink" to="/predavaci">
             Predavaci
           </Link>
-          <Link className="navLink" to="/administracija">
-            Administracija
-          </Link>
+          {user === "Admin" && (
+            <Link className="navLink" to="/administracija">
+              Administracija
+            </Link>
+          )}
+
           <div className="switchContainer">
-            <label className="switch" onClick={handleClick}>
+            <label
+              className="switch"
+              onClick={() => setUser(user === "Admin" ? "User" : "Admin")}
+            >
               <input type="checkbox" />
               <span className="sliderRound"></span>
             </label>
           </div>
 
-          <strong></strong>
+          <strong>{user}</strong>
         </nav>
         <div className="line"></div>
       </header>
