@@ -8,7 +8,7 @@
       "description": "asd",
       "theme": "React",
       "difficulty": "Mid",
-      "number_of_applications": 9
+      "number_of_applications": 10
     },
     {
       "id": "62ae",
@@ -19,6 +19,17 @@
       "theme": "Express",
       "difficulty": "Junior",
       "number_of_applications": 1
+    },
+    {
+      "id": "9bf3",
+      "name": "asd asdasdasdasdasdasdasa",
+      "date": "1.1.2000",
+      "lecturer": "asdasd d asdads sds asd a",
+      "description": "as dadsasd asd dada das dasdas sdasdasdas das dsa a asas as sadsa dsa as",
+      "theme": "React",
+      "difficulty": "Junior",
+      "number_of_applications": 0,
+      "number_of_aplications": 0
     }
   ],
   "lecturers": [
@@ -63,16 +74,27 @@
     },
     {
       "id": "4a05",
-      "name": "asdasd",
-      "bio": "asdas",
-      "organization": "Agilno",
+      "name": "asdasd d asdads sds asd a",
+      "bio": "asdasasd as dasdasdasdsaa dasda sd as dasd asd das ddasd d asd adas dad ",
+      "organization": "asd asd as d ad asd ad as",
       "themes": [
         {
           "id": "express",
           "name": "Express"
+        },
+        {
+          "id": "react",
+          "name": "React"
+        },
+        {
+          "id": "next_js",
+          "name": "Next.js"
+        },
+        {
+          "id": "node_js",
+          "name": "Node.js"
         }
-      ],
-      "profilePicture": {}
+      ]
     },
     {
       "id": "ec05",
@@ -185,6 +207,14 @@
       "name": "sdfsd",
       "email": "dujelozic@gmail.com",
       "reason": "sdfsdf",
+      "workshop": "asd",
+      "workshopId": "41b9"
+    },
+    {
+      "id": "817a",
+      "name": "asd asdsaa sd d asdasd as",
+      "email": "dujelozic@gmail.comaasdas",
+      "reason": "asd das asda sdasdasdasdasd asd as a a adasdsa as dasa dad as dasda sad adas a dasd asdsad ad asdasd",
       "workshop": "asd",
       "workshopId": "41b9"
     }

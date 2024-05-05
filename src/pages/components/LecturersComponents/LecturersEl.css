@@ -23,10 +23,12 @@
 .lecturerName {
   font-size: large;
   margin-bottom: 0px;
+  margin-top: 10px;
 }
 
 .lecturerBio {
-  height: 50px;
+  height: 67px;
+  margin-top: 5px;
 }
 
 .lecturerOrganization {

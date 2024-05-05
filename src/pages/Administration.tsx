@@ -133,7 +133,7 @@ export const Administration = () => {
             <div>
               <span className="listName">Ime prijavitelja:</span>
               <span className="listNoOfApp">Email prijavitelja:</span>
-              <span className="listDate">Razlog prijave:</span>
+              <span className="listDate">Radionica prijavitelja:</span>
             </div>
           </div>
         ) : null}
