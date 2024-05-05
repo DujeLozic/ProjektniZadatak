@@ -19,23 +19,26 @@
       "theme": "Express",
       "difficulty": "Junior",
       "number_of_applications": 1
-    },
-    {
-      "id": "c9dd",
-      "name": "asaasadsads",
-      "date": "1.1.2025",
-      "lecturer": "Ivana Ivančić",
-      "description": "dasasddd222323 232",
-      "theme": "Express",
-      "difficulty": "Junior",
-      "number_of_applications": 1
     }
   ],
   "lecturers": [
     {
-      "id": "predavac_2",
-      "name": "Petra Petrić",
-      "bio": "Biografija predavaca 2",
+      "id": "predavac_4",
+      "name": "Ante Antić",
+      "bio": "Biografija predavaca 4",
+      "organization": "Locastic",
+      "themes": [
+        {
+          "id": "next_js",
+          "name": "Next.js"
+        }
+      ],
+      "profilePicture": {}
+    },
+    {
+      "id": "2385",
+      "name": "Ana Anić",
+      "bio": "asdass",
       "organization": "Locastic",
       "themes": [
         {
@@ -46,28 +49,70 @@
       "profilePicture": {}
     },
     {
-      "id": "predavac_3",
-      "name": "Ivana Ivančić",
-      "bio": "Biografija predavaca 3",
+      "id": "2300",
+      "name": "asdas",
+      "bio": "asdsdsd",
+      "organization": "aaa",
       "themes": [
+        {
+          "id": "react",
+          "name": "React"
+        }
+      ],
+      "profilePicture": null
+    },
+    {
+      "id": "4a05",
+      "name": "asdasd",
+      "bio": "asdas",
+      "organization": "Agilno",
+      "themes": [
+        {
+          "id": "express",
+          "name": "Express"
+        }
+      ],
+      "profilePicture": {}
+    },
+    {
+      "id": "ec05",
+      "name": "Petra Petrić",
+      "bio": "asdsad",
+      "organization": "Locastic",
+      "themes": [
+        {
+          "id": "express",
+          "name": "Express"
+        },
+        {
+          "id": "next_js",
+          "name": "Next.js"
+        },
+        {
+          "id": "node_js",
+          "name": "Node.js"
+        },
+        {
+          "id": "react",
+          "name": "React"
+        }
+      ]
+    },
+    {
+      "id": "8f31",
+      "name": "Ivana Ivančić",
+      "bio": "asdasasdads",
+      "organization": "Digital Dalmacija",
+      "themes": [
+        {
+          "id": "react",
+          "name": "React"
+        },
         {
           "id": "node_js",
           "name": "Node.js"
         }
-      ],
-      "organization": "Info Bip"
-    },
-    {
-      "id": "predavac_4",
-      "name": "Ante Antić",
-      "bio": "Biografija predavaca 4",
-      "themes": [
-        {
-          "id": "next_js",
-          "name": "Next.js"
-        }
-      ],
-      "organization": "Locastic"
+      ]
     }
   ],
   "organizations": [

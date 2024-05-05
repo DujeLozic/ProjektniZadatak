@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { ILecturers } from "../../../interface";
 import "./LecturersEl.css";
 import ModalEditLecturer from "./ModalEditLecturer";
 import { useNavigate } from "react-router-dom";
+import { Context } from "../../../Context";
 
 function LecturersEl({
   lecturer,
@@ -13,6 +14,7 @@ function LecturersEl({
   setLecturer: React.Dispatch<React.SetStateAction<ILecturers[]>>;
   lecturers: ILecturers[];
 }) {
+  const user = useContext(Context);
   const [modalEditOpener, setModalEditOpener] = useState(false);
 
   const navigate = useNavigate();
@@ -27,22 +29,15 @@ function LecturersEl({
 
   return (
     <div className="lecturerElement">
-      <div className="lecturerImageContainer">
-        <img
-          className="lecturerImage"
-          src={
-            lecturer.profilePicture
-              ? URL.createObjectURL(lecturer.profilePicture)
-              : "src/assets/default.png"
-          }
-          onError={(e: any) => {
-            e.target.onerror = null;
-            e.target.src = "src/assets/default.png";
-            e.target.alt = "default lecturer photo";
-          }}
-        />
-      </div>
-
+      <img
+        className="lecturerImage"
+        src={`src/assets/${lecturer.name}.png`}
+        onError={(e: any) => {
+          e.target.onerror = null;
+          e.target.src = "src/assets/default.png";
+          e.target.alt = "default lecturer photo";
+        }}
+      />
       <p className="lecturerName">{lecturer.name}</p>
       <div className="lecturerDesc">
         <p className="lecturerBio">Bio: {lecturer.bio}</p>
@@ -60,12 +55,15 @@ function LecturersEl({
             >
               Pregledaj radionice
             </button>
-            <button
-              className="editLecturerButton"
-              onClick={() => handleModalEditOpener(true)}
-            >
-              Uredi
-            </button>
+            {user === "Admin" && (
+              <button
+                className="editLecturerButton"
+                onClick={() => handleModalEditOpener(true)}
+              >
+                Uredi
+              </button>
+            )}
+
             {modalEditOpener && (
               <ModalEditLecturer
                 lecturer={lecturer}

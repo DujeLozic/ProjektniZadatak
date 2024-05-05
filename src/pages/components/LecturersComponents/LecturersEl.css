@@ -11,16 +11,13 @@
   align-items: center;
 }
 
-.lecturerImageContainer {
-  margin-top: 20px;
+.lecturerImage {
   height: 120px;
   width: 120px;
+  margin-top: 20px;
   border: solid 2px rgb(224, 224, 224);
   border-radius: 50%;
   overflow: hidden;
-}
-
-.lecturerImage {
 }
 
 .lecturerName {

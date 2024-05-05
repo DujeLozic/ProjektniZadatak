@@ -67,7 +67,6 @@ function AdminWsEl({
               setWorkshop={setWorkshop}
               workshops={workshops}
               workshopName={`radionicu ${workshop.name}`}
-              workshop={workshop}
             />
           )}
         </div>

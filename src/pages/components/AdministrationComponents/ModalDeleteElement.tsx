@@ -29,7 +29,6 @@ function ModalDeleteElement({
   organizationLink,
   lecturerLink,
   applicantLink,
-  workshop,
   decreaseAppWsId,
 }: {
   handleModalDeleteOpener: (arg0: boolean) => void;
@@ -53,7 +52,6 @@ function ModalDeleteElement({
   organizationLink: string;
   lecturerLink: string;
   applicantLink: string;
-  workshop: IWorkshops;
   decreaseAppWsId: string;
 }) {
   console.log(decreaseAppWsId, applicantId);
@@ -69,7 +67,10 @@ function ModalDeleteElement({
   };
 
   function findWorkshopById(e: string) {
-    return workshops.find((workshop) => workshop.id === e);
+    if (workshops) {
+      return workshops.find((workshop) => workshop.id === e);
+    }
+    return;
   }
 
   const currentWorkshop = findWorkshopById(decreaseAppWsId);
@@ -103,6 +104,7 @@ function ModalDeleteElement({
             (app) => app.id !== applicantId
           );
           setApplicant(updatedApplicants);
+          decreaseApplicants(e);
         }
       })
       .catch((error) => {
@@ -112,7 +114,7 @@ function ModalDeleteElement({
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     deleteElement(e);
-    decreaseApplicants(e);
+
     handleModalDeleteOpener(false);
   };
 

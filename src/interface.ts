@@ -15,7 +15,6 @@ export interface ILecturers {
   bio: string;
   themes: IThemes[];
   organization: string;
-  profilePicture: File | null;
 }
 
 export interface IOrganizationts {

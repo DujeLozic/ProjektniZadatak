@@ -11,41 +11,49 @@ export const Root = ({ setUser }: { setUser: (value: string) => void }) => {
     <>
       <header>
         <nav>
-          <Link to="/">
-            <img
-              className="logoNav"
-              src="./src/assets/juniorDev.png"
-              alt="junior dev logo"
-            />
-          </Link>
-
-          <Link className="navLink" to="/radionice">
-            Radionice
-          </Link>
-          <Link className="navLink" to="/predavaci">
-            Predavaci
-          </Link>
-          {user === "Admin" && (
-            <Link className="navLink" to="/administracija">
-              Administracija
-            </Link>
-          )}
-
-          <div className="switchContainer">
-            <label className="switch">
-              <input
-                type="checkbox"
-                onClick={() => {
-                  console.log(user);
-                  setUser(user === "Admin" ? "User" : "Admin");
-                }}
+          <div className="links">
+            <Link to="/">
+              <img
+                className="logoNav"
+                src="./src/assets/juniorDev.png"
+                alt="junior dev logo"
               />
-              <span className="sliderRound"></span>
-            </label>
+            </Link>
+            <Link className="navLink" to="/radionice">
+              Radionice
+            </Link>
+            <Link className="navLink" to="/predavaci">
+              Predavaci
+            </Link>
+            {user === "Admin" && (
+              <Link className="navLink" to="/administracija">
+                Administracija
+              </Link>
+            )}
+            {user === "User" && (
+              <Link className="navLink" to="/">
+                Administracija
+              </Link>
+            )}
           </div>
 
-          <strong>{user}</strong>
+          <div className="login">
+            <strong>{user}</strong>
+            <div className="switchContainer">
+              <label className="switch">
+                <input
+                  type="checkbox"
+                  onClick={() => {
+                    console.log(user);
+                    setUser(user === "Admin" ? "User" : "Admin");
+                  }}
+                />
+                <span className="sliderRound"></span>
+              </label>
+            </div>
+          </div>
         </nav>
+
         <div className="line"></div>
       </header>
 

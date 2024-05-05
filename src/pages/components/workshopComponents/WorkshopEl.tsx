@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IWorkshops } from "../../../interface";
 import "./WorkshopEl.css";
 import ModalSubmitApplication from "./ModalSubmitApplication";
 import ModalEditWorkshop from "./ModalEditWorkshop";
+import { Context } from "../../../Context";
 
 function WorkshopEl({
   workshop,
@@ -13,6 +14,7 @@ function WorkshopEl({
   setWorkshop: React.Dispatch<React.SetStateAction<IWorkshops[]>>;
   workshops: IWorkshops[];
 }) {
+  const user = useContext(Context);
   const [modalSubmitOpener, setModalSubmitOpener] = useState(false);
   const [modalEditOpener, setModalEditOpener] = useState(false);
 
@@ -55,12 +57,14 @@ function WorkshopEl({
           workshopName={workshop.name}
         />
       )}
-      <button
-        className="editButton"
-        onClick={() => handleModalEditOpener(true)}
-      >
-        Uredi
-      </button>
+      {user === "Admin" && (
+        <button
+          className="editButton"
+          onClick={() => handleModalEditOpener(true)}
+        >
+          Uredi
+        </button>
+      )}
       {modalEditOpener && (
         <ModalEditWorkshop
           workshop={workshop}

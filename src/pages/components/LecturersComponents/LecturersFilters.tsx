@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { ILecturers } from "../../../interface";
 import "./LecturersFilters.css";
 import LecturersEl from "./LecturersEl";
 import ModalNewLecturer from "./ModalNewLecturer";
+import { Context } from "../../../Context";
 
 function LecturersFilters({
   lecturer,
@@ -11,6 +12,7 @@ function LecturersFilters({
   lecturer: ILecturers[];
   setLecturer: React.Dispatch<React.SetStateAction<ILecturers[]>>;
 }) {
+  const user = useContext(Context);
   const [filterTheme, setFilterTheme] = useState("All");
   const [filterOrganization, setFilterOrganization] = useState("All");
   const [modalNewOpener, setModalNewOpener] = useState(false);
@@ -29,14 +31,17 @@ function LecturersFilters({
 
   return (
     <>
-      <div className="workshopButtonContanier">
-        <button
-          className="newWorkshopButton"
-          onClick={() => handleModalNewOpener(true)}
-        >
-          Dodaj novog predavača
-        </button>
-      </div>
+      {user === "Admin" && (
+        <div className="workshopButtonContanier">
+          <button
+            className="newWorkshopButton"
+            onClick={() => handleModalNewOpener(true)}
+          >
+            Dodaj novog predavača
+          </button>
+        </div>
+      )}
+
       {modalNewOpener && (
         <ModalNewLecturer
           setLecturer={setLecturer}

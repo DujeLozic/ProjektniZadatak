@@ -10,7 +10,7 @@ import { useState } from "react";
 import { Context } from "./Context";
 
 function App() {
-  const [user, setUser] = useState("Admin");
+  const [user, setUser] = useState("User");
 
   const router = createBrowserRouter([
     {

@@ -23,6 +23,12 @@ nav {
   background-color: white;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.links {
+  display: flex;
+  align-items: center;
 }
 
 .navLink {
@@ -164,7 +170,8 @@ footer {
 .switchContainer {
   height: 24px;
   width: 40px;
-  margin-right: 5px;
+  margin-left: 6px;
+  margin-right: 30px;
 }
 
 .switch {
@@ -218,4 +225,9 @@ input:checked + .sliderRound:before {
   -webkit-transform: translateX(16px);
   -ms-transform: translateX(16px);
   transform: translateX(16px);
+}
+
+.login {
+  display: flex;
+  align-items: center;
 }
