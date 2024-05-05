@@ -6,12 +6,16 @@ import ErrorPage from "./pages/Error";
 import { Root } from "./pages/Root";
 import Workshops from "./pages/Workshops";
 import { Home } from "./pages/Home";
+import { useState } from "react";
+import { Context } from "./Context";
 
 function App() {
+  const [user, setUser] = useState("Admin");
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Root />,
+      element: <Root setUser={setUser} />,
       errorElement: <ErrorPage />,
       children: [
         {
@@ -35,9 +39,9 @@ function App() {
   ]);
 
   return (
-    <>
+    <Context.Provider value={user}>
       <RouterProvider router={router} />
-    </>
+    </Context.Provider>
   );
 }
 

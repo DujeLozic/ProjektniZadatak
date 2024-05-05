@@ -27,15 +27,22 @@ function LecturersEl({
 
   return (
     <div className="lecturerElement">
-      <img
-        className="lecturerImage"
-        src={`src/assets/${lecturer.name}.png`}
-        onError={(e: any) => {
-          e.target.onerror = null;
-          e.target.src = "src/assets/default.png";
-          e.target.alt = "default lecturer photo";
-        }}
-      />
+      <div className="lecturerImageContainer">
+        <img
+          className="lecturerImage"
+          src={
+            lecturer.profilePicture
+              ? URL.createObjectURL(lecturer.profilePicture)
+              : "src/assets/default.png"
+          }
+          onError={(e: any) => {
+            e.target.onerror = null;
+            e.target.src = "src/assets/default.png";
+            e.target.alt = "default lecturer photo";
+          }}
+        />
+      </div>
+
       <p className="lecturerName">{lecturer.name}</p>
       <div className="lecturerDesc">
         <p className="lecturerBio">Bio: {lecturer.bio}</p>

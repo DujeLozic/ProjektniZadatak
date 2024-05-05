@@ -1,14 +1,14 @@
 import { Link, Outlet } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import "./Root.css";
-import { createContext, useState } from "react";
+import { useContext } from "react";
+import { Context } from "../Context";
 
-export const Root = () => {
-  const UserContext = createContext("Admin");
-  const [user, setUser] = useState("Admin");
+export const Root = ({ setUser }: { setUser: (value: string) => void }) => {
+  const user = useContext(Context);
 
   return (
-    <UserContext.Provider value={user}>
+    <>
       <header>
         <nav>
           <Link to="/">
@@ -32,11 +32,14 @@ export const Root = () => {
           )}
 
           <div className="switchContainer">
-            <label
-              className="switch"
-              onClick={() => setUser(user === "Admin" ? "User" : "Admin")}
-            >
-              <input type="checkbox" />
+            <label className="switch">
+              <input
+                type="checkbox"
+                onClick={() => {
+                  console.log(user);
+                  setUser(user === "Admin" ? "User" : "Admin");
+                }}
+              />
               <span className="sliderRound"></span>
             </label>
           </div>
@@ -103,6 +106,6 @@ export const Root = () => {
           </p>
         </div>
       </footer>
-    </UserContext.Provider>
+    </>
   );
 };

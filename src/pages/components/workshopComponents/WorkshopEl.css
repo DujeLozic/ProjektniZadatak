@@ -29,15 +29,21 @@
 
 .workshopLecturer {
   margin-left: 20px;
+  margin-bottom: 0px;
+  margin-top: 5px;
 }
 
 .workshopDate {
+  margin-top: 0px;
   margin-left: 20px;
 }
 
 .workshopDescription {
+  width: 350px;
+  height: 45px;
   margin-top: 0px;
-  margin-left: 0130px;
+  margin-left: 20px;
+  margin-bottom: 0px;
 }
 
 .submitButton {

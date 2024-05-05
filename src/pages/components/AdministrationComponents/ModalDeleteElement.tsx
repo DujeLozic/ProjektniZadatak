@@ -61,11 +61,18 @@ function ModalDeleteElement({
     e.preventDefault();
     axios
       .patch(`http://localhost:3001/workshops/${decreaseAppWsId}`, {
-        number_of_applications: workshop.number_of_applications - 1,
+        number_of_applications:
+          (currentWorkshop?.number_of_applications || 1) - 1,
       })
 
       .catch((err) => console.log(err.message));
   };
+
+  function findWorkshopById(e: string) {
+    return workshops.find((workshop) => workshop.id === e);
+  }
+
+  const currentWorkshop = findWorkshopById(decreaseAppWsId);
 
   const deleteElement = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

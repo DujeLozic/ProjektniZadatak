@@ -34,7 +34,7 @@ function LecturersFilters({
           className="newWorkshopButton"
           onClick={() => handleModalNewOpener(true)}
         >
-          Dodaj novu radionicu
+          Dodaj novog predavača
         </button>
       </div>
       {modalNewOpener && (

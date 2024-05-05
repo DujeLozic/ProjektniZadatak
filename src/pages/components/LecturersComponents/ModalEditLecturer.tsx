@@ -10,12 +10,19 @@ interface InputForm {
   bio: string;
   organization: string;
   themes: IThemes[];
+  profilePicture: File | null;
 }
 
 interface Option {
   value: string;
   label: string;
 }
+
+type Group = {
+  value: string;
+  label: string;
+  options: Option[];
+};
 
 function ModalEditLecturer({
   lecturer,
@@ -36,9 +43,12 @@ function ModalEditLecturer({
     bio: "",
     organization: "",
     themes: [],
+    profilePicture: null,
   });
 
-  const mapValuesToOptions = (values: IThemes[]): OptionsOrGroups<Option> => {
+  const mapValuesToOptions = (
+    values: IThemes[]
+  ): OptionsOrGroups<Option, Group> => {
     return values.map((theme) => {
       return { value: theme.id, label: theme.name };
     });
@@ -62,9 +72,10 @@ function ModalEditLecturer({
           bio: resFormData.data.bio,
           organization: resFormData.data.organization,
           themes: resFormData.data.themes,
+          profilePicture: resFormData.data.profilePicture,
         }));
         setThemes(resThemes.data);
-        setSelectedOptions(mapValuesToOptions(resThemes.data));
+        setSelectedOptions(mapValuesToOptions(resFormData.data.themes));
         setOrganizations(resOrganizations.data);
       })
       .catch((err) => console.log(err.message));
@@ -106,6 +117,15 @@ function ModalEditLecturer({
     });
   };
 
+  const handleProfilePictureChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const file = e.target.files && e.target.files[0];
+    if (file) {
+      setFormData({ ...formData, profilePicture: file });
+    }
+  };
+
   return (
     <div
       className="modalContainer"
@@ -132,6 +152,14 @@ function ModalEditLecturer({
                 setFormData({ ...formData, name: e.target.value })
               }
               required
+            />
+          </div>
+          <div className="modalInputElements">
+            <label htmlFor="ProfilePicture">Profile Picture:</label>
+            <input
+              id="ProfilePicture"
+              type="file"
+              onChange={handleProfilePictureChange}
             />
           </div>
           <div className="modalInputElements">

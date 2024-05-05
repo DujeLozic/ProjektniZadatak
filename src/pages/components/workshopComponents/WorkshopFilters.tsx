@@ -1,8 +1,9 @@
-import { createContext, useState } from "react";
+import { useContext, useState } from "react";
 import { IWorkshops } from "../../../interface";
 import WorkshopEl from "./WorkshopEl";
 import "./WorkshopFilters.css";
 import ModalNewWorkshop from "./ModalNewWorkshop";
+import { Context } from "../../../Context";
 
 function WorkshopsFilters({
   workshop,
@@ -11,7 +12,7 @@ function WorkshopsFilters({
   workshop: IWorkshops[];
   setWorkshop: React.Dispatch<React.SetStateAction<IWorkshops[]>>;
 }) {
-  const UserContext = createContext("Admin");
+  const user = useContext(Context);
   const [filterTheme, setFilterTheme] = useState("All");
   const [filterDifficulty, setFilterDifficulty] = useState("All");
   const [modalNewOpener, setModalNewOpener] = useState(false);
@@ -32,17 +33,17 @@ function WorkshopsFilters({
 
   return (
     <>
-      {/* {UserContext === "Admin" && (
-        
-      )} */}
-      <div className="workshopButtonContanier">
-        <button
-          className="newWorkshopButton"
-          onClick={() => handleModalNewOpener(true)}
-        >
-          Dodaj novu radionicu
-        </button>
-      </div>
+      {user === "Admin" && (
+        <div className="workshopButtonContanier">
+          <button
+            className="newWorkshopButton"
+            onClick={() => handleModalNewOpener(true)}
+          >
+            Dodaj novu radionicu
+          </button>
+        </div>
+      )}
+
       {modalNewOpener && (
         <ModalNewWorkshop
           setWorkshop={setWorkshop}

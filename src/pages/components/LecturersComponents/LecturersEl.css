@@ -1,5 +1,5 @@
 .lecturerElement {
-  height: 400px;
+  height: 415px;
   width: 250px;
   margin-top: 20px;
   margin-left: 20px;
@@ -11,13 +11,16 @@
   align-items: center;
 }
 
-.lecturerImage {
+.lecturerImageContainer {
+  margin-top: 20px;
   height: 120px;
   width: 120px;
-  margin-top: 20px;
   border: solid 2px rgb(224, 224, 224);
   border-radius: 50%;
   overflow: hidden;
+}
+
+.lecturerImage {
 }
 
 .lecturerName {
@@ -31,11 +34,12 @@
 
 .lecturerOrganization {
   margin-bottom: 0px;
-  overflow: auto;
+  height: 45px;
 }
 
 .lecturerThemes {
   margin-top: 2px;
+  height: 45px;
 }
 
 .buttonsContanier {
@@ -46,6 +50,7 @@
 .viewWorkshopsButton {
   height: 30px;
   width: 130px;
+  margin-right: 2px;
   border: solid 0px;
   border-radius: 4px;
   background-color: rgba(0, 127, 171, 255);
@@ -63,6 +68,7 @@
 .editLecturerButton {
   height: 30px;
   width: 70px;
+  margin-left: 3px;
   border: solid 0px;
   border-radius: 4px;
   background-color: rgb(211, 172, 0);

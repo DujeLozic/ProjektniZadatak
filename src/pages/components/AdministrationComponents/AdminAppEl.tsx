@@ -1,15 +1,17 @@
 import { useState } from "react";
 import ModalDeleteElement from "./ModalDeleteElement";
-import { IApplicants } from "../../../interface";
+import { IApplicants, IWorkshops } from "../../../interface";
 
 function AdminAppEl({
   applicant,
   setApplicant,
   applicants,
+  workshops,
 }: {
   applicant: IApplicants;
   setApplicant: React.Dispatch<React.SetStateAction<IApplicants[]>>;
   applicants: IApplicants[];
+  workshops: IWorkshops[];
 }) {
   const [modalDeleteOpener, setModalDeleteOpener] = useState(false);
 
@@ -33,6 +35,7 @@ function AdminAppEl({
       </button>
       {modalDeleteOpener && (
         <ModalDeleteElement
+          workshops={workshops}
           key={applicant.id}
           handleModalDeleteOpener={handleModalDeleteOpener}
           applicantId={applicant.id}

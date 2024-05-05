@@ -8,12 +8,19 @@ interface InputForm {
   bio: string;
   organization: string;
   themes: IThemes[];
+  profilePicture: File | null;
 }
 
 interface Option {
   value: string;
   label: string;
 }
+
+type Group = {
+  value: string;
+  label: string;
+  options: Option[];
+};
 
 function ModalNewLecturer({
   setLecturer,
@@ -27,9 +34,12 @@ function ModalNewLecturer({
     bio: "",
     organization: "",
     themes: [],
+    profilePicture: null,
   });
 
-  const mapValuesToOptions = (values: IThemes[]): OptionsOrGroups<Option> => {
+  const mapValuesToOptions = (
+    values: IThemes[]
+  ): OptionsOrGroups<Option, Group> => {
     return values.map((theme) => {
       return { value: theme.id, label: theme.name };
     });
@@ -77,6 +87,15 @@ function ModalNewLecturer({
     });
   };
 
+  const handleProfilePictureChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const file = e.target.files && e.target.files[0];
+    if (file) {
+      setFormData({ ...formData, profilePicture: file });
+    }
+  };
+
   return (
     <div
       className="modalContainer"
@@ -103,6 +122,15 @@ function ModalNewLecturer({
                 setFormData({ ...formData, name: e.target.value })
               }
               required
+            />
+          </div>
+          <div className="modalInputElements">
+            <label htmlFor="ProfilePicture">Profile Picture:</label>
+            <input
+              id="ProfilePicture"
+              type="file"
+              accept="image/*"
+              onChange={handleProfilePictureChange}
             />
           </div>
           <div className="modalInputElements">

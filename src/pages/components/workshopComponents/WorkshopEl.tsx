@@ -15,7 +15,6 @@ function WorkshopEl({
 }) {
   const [modalSubmitOpener, setModalSubmitOpener] = useState(false);
   const [modalEditOpener, setModalEditOpener] = useState(false);
-  // const user = userContext();
 
   const handleModalSubmitOpener = (e: boolean) => {
     setModalSubmitOpener(e);
@@ -35,11 +34,13 @@ function WorkshopEl({
         />
         <div>
           <p className="workshopName">{workshop.name}</p>
+          <p className="workshopDescription">Opis: {workshop.description}</p>
+
           <p className="workshopLecturer">Predavac: {workshop.lecturer}</p>
           <p className="workshopDate">Datum: {workshop.date}</p>
         </div>
       </div>
-      <p className="workshopDescription">Opis: {workshop.description}</p>
+
       <button
         className="submitButton"
         onClick={() => handleModalSubmitOpener(true)}
@@ -54,9 +55,6 @@ function WorkshopEl({
           workshopName={workshop.name}
         />
       )}
-      {/* {user === "Admin" && (<button className="editButton" onClick={handleModalEditOpener}>
-        Uredi
-      </button>)} */}
       <button
         className="editButton"
         onClick={() => handleModalEditOpener(true)}

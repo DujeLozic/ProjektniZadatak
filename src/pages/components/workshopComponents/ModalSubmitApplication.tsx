@@ -22,7 +22,6 @@ function ModalSubmitApplication({
   handleModalSubmitOpener: (arg0: boolean) => void;
   workshopName: string;
 }) {
-  const [applicants, setApplicants] = useState<IApplicants[]>([]);
   const [formData, setFormData] = useState<InputForm>({
     name: "",
     email: "",
@@ -49,12 +48,11 @@ function ModalSubmitApplication({
   const sendData = (e: any) => {
     e.preventDefault();
 
-    axios.post("http://localhost:3001/applicants", formData).then((res) => {
-      setApplicants((applicants) => [...applicants, res.data]);
-    });
+    axios.post("http://localhost:3001/applicants", formData);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    console.log(formData.reason, "");
     sendData(e);
     increaseApplicants(e);
     handleModalSubmitted(true);
@@ -110,8 +108,6 @@ function ModalSubmitApplication({
                   setFormData({
                     ...formData,
                     name: e.target.value,
-                    workshop: workshopName,
-                    workshopId: workshop.id,
                   })
                 }
                 required
@@ -135,10 +131,15 @@ function ModalSubmitApplication({
               <textarea
                 className="modalTextArea"
                 placeholder="Razlog prijave..."
-                maxLength={145}
+                maxLength={100}
                 value={formData.reason}
                 onChange={(e) =>
-                  setFormData({ ...formData, reason: e.target.value })
+                  setFormData({
+                    ...formData,
+                    reason: e.target.value,
+                    workshop: workshopName,
+                    workshopId: workshop.id,
+                  })
                 }
                 required
               ></textarea>

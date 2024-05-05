@@ -135,6 +135,7 @@ export const Administration = () => {
           : table === "applications"
           ? applicant.map((app) => (
               <AdminAppEl
+                workshops={workshop}
                 key={app.id}
                 applicant={app}
                 setApplicant={setApplicant}
