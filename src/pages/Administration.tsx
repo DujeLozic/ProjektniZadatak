@@ -105,6 +105,38 @@ export const Administration = () => {
         )}
       </div>
       <div>
+        {table === "workshops" ? (
+          <div className="listElement">
+            <div>
+              <span className="listName">Ime radionice:</span>
+              <span className="listNoOfApp">Broj prijava:</span>
+              <span className="listDate">Datum radionice:</span>
+            </div>
+          </div>
+        ) : table === "organizations" ? (
+          <div className="listElement">
+            <div>
+              <span className="listName">Ime organizacije:</span>
+              <span className="listNoOfApp">Opis organizacije:</span>
+            </div>
+          </div>
+        ) : table === "lecturers" ? (
+          <div className="listElement">
+            <div>
+              <span className="listName">Ime predavača:</span>
+              <span className="listNoOfApp">Ime organizacije:</span>
+              <span className="listDate">Teme:</span>
+            </div>
+          </div>
+        ) : table === "applications" ? (
+          <div className="listElement">
+            <div>
+              <span className="listName">Ime prijavitelja:</span>
+              <span className="listNoOfApp">Email prijavitelja:</span>
+              <span className="listDate">Razlog prijave:</span>
+            </div>
+          </div>
+        ) : null}
         {table === "workshops"
           ? workshop.map((ws) => (
               <AdminWsEl

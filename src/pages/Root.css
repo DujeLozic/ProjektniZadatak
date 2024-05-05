@@ -17,7 +17,7 @@ body {
   color: rgb(95, 95, 95);
 }
 
-nav {
+.headerNav {
   height: 60px;
   margin-top: 5px;
   background-color: white;

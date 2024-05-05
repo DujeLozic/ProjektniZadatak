@@ -29,9 +29,7 @@ function AdminWsEl({
       <div className="listElement">
         <div>
           <span className="listName">{workshop.name}</span>
-          <span className="listNoOfApp">
-            Broj prijava: {workshop.number_of_applications}
-          </span>
+          <span className="listNoOfApp">{workshop.number_of_applications}</span>
           <span className="listDate">{workshop.date}</span>
         </div>
 

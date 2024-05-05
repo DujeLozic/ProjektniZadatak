@@ -8,7 +8,7 @@
       "description": "asd",
       "theme": "React",
       "difficulty": "Mid",
-      "number_of_applications": 8
+      "number_of_applications": 9
     },
     {
       "id": "62ae",
@@ -179,5 +179,14 @@
       "name": "Node.js"
     }
   ],
-  "applicants": []
+  "applicants": [
+    {
+      "id": "ec5f",
+      "name": "sdfsd",
+      "email": "dujelozic@gmail.com",
+      "reason": "sdfsdf",
+      "workshop": "asd",
+      "workshopId": "41b9"
+    }
+  ]
 }

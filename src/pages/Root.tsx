@@ -10,7 +10,7 @@ export const Root = ({ setUser }: { setUser: (value: string) => void }) => {
   return (
     <>
       <header>
-        <nav>
+        <nav className="headerNav">
           <div className="links">
             <Link to="/">
               <img
